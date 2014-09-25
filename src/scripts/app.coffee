@@ -1,12 +1,3 @@
-logger = require('./test/my')
-
+logger = require('./logger/logger')
 
 logger('hello browserify!!')
-
-console.log 'lklksssss'
-console.log xxx
-
-
-# class boaConstrictor
-# 	foo: ->
-# 		log('ss d')
