@@ -11,7 +11,10 @@ gulp.task('sass', function () {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src(['src/sass/*.{scss, sass}'])
     .pipe(plumber({errorHandler: handleErrors}))
-    .pipe(sass({sourceComments: 'map'}))
+    .pipe(sass({
+      sourceComments: 'map',
+      includePaths: require('node-bourbon').includePaths
+      }))
     // .pipe(autoprefixer(AUTOPREFIXER_BROWSERS, { map: true }))
     .pipe(gulp.dest(dest));
 });

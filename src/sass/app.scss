@@ -1,15 +1,20 @@
-@import 'components/components';
+@import "normalize";
+// see http://bourbon.io
+@import "bourbon";
+// see http://neat.bourbon.io
+@import "grid-settings";
+@import "neat/neat";
 
-
-.gulp-logo{
-	width: 400px;
-	height: 500px;
-	background: url('/assets/gulp.png');
-	justify-content: space-between;
+h1 {
+  @include image-rendering(optimizeSpeed);
+  font-family: $helvetica;
+  font-size: golden-ratio(14px,  1);
 }
-
-body{
-	background: red;
+div.container {
+  @include outer-container;
 }
-
-
+.element {
+  @include span-columns(6);
+  @include shift(3);
+  text-align: center;
+}
