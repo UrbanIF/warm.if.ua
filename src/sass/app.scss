@@ -313,7 +313,7 @@ section.info {
     font-weight: 400;
     line-height: em(20, 14);
     color: #5a5a5a;
-    margin-bottom: em(47, 14);
+    margin-bottom: em(35, 14);
     h3 {
       font-size: em(30, 14);
       line-height: em(30, 30);
@@ -322,6 +322,7 @@ section.info {
       color: #181818;
     }
     h5 {
+      font-size: em(14, 14);
       font-weight: 700;
       margin:0 0 em(20, 14);
     }
@@ -337,9 +338,9 @@ section.info {
     @include span-columns(24);
   }
   .values {
-    @include span-columns(10);
+    @include span-columns(11);
   }
   .tasks {
-    @include span-columns(14);
+    @include span-columns(13);
   }
 }
