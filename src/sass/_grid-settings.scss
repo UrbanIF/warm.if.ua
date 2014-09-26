@@ -1,2 +1,7 @@
 @import "neat/neat-helpers";
-$max-width: em(960);
+$column: 30px;
+$gutter: 10px;
+$grid-columns: 24;
+$min-container: em(950);
+
+$max-width: $min-container;

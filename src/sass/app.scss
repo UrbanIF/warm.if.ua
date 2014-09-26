@@ -4,17 +4,342 @@
 // see http://neat.bourbon.io
 @import "grid-settings";
 @import "neat/neat";
+html {
+  font-family: 'Open Sans', sans-serif;
+  background: #e6e6e6;
+}
 
-h1 {
-  @include image-rendering(optimizeSpeed);
-  font-family: $helvetica;
-  font-size: golden-ratio(14px,  1);
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
-div.container {
-  @include outer-container;
-}
-.element {
-  @include span-columns(6);
-  @include shift(3);
+a.button {
+  width: em(182, 14);
+  margin: 0 auto;
+  height: em(36, 14);
+  line-height: em(36, 14);
+  text-decoration: none;
   text-align: center;
+  vertical-align: middle;
+  display: block;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: em(14);
+  border-radius: 30px;
+  &.red {
+    background-color:  #ff1e07;
+  }
+  &:before {
+    display: inline-block;
+    margin: 0 7px 0 -7px;
+    content: '';
+    width: em(10, 14);
+    height: em(10, 14);
+    background: url('/assets/plus.png') no-repeat center center;
+    background-size: cover;
+
+  }
+}
+/**
+* HEADER
+*/
+header{
+  width: 100%;
+  background-color:  rgba(0, 0, 0, 0.4);
+  height: em(80);
+  min-width: $min-container;
+  position: absolute;
+  .logo {
+    width: em(63);
+    height: em(63);
+    margin: em(9) 0 0 em(40);
+    float: left;
+  }
+  nav {
+    padding: em(55) 0 0 em(5);
+    margin-left: em(103);
+    width: em(405);
+    li {
+      float: left;
+      font-size: em(14);
+      text-transform: uppercase;
+      &.title {
+        padding: 0 em(15);
+      }
+    }
+  }
+
+  nav li, nav a, ul.languages a {
+    color: #fff;
+    font-weight: 300;
+    line-height: em(25);
+  }
+  nav a, ul.languages a {
+    padding: em(5) em(15);
+    text-decoration: none;
+  }
+  nav a:hover, ul.languages a:hover {
+    background-color:  rgba(255, 255, 255, 0.25);
+  }
+  ul.languages {
+    float: right;
+    list-style-type: none;
+    margin:0 em(21) 0 0;
+    padding:0;
+    li {
+      float: left;
+      font-size: em(14);
+      text-transform: uppercase;
+    }
+  }
+}
+
+.header-image {
+  background: url('/assets/photo.jpg') no-repeat center center;
+  background-size: cover;
+  height: em(810);
+  width: 100%;
+  min-width: $min-container;
+  h1,h2,h3 {
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    line-height: 1em;
+    padding: 0;
+  }
+  h1 {
+    text-transform: uppercase;
+    font-size: em(36);
+    padding: 3.65em 0 em(11,36) 0;
+    &:after {
+      content:'';
+      display:inline-block;
+      position:relative;
+      top: em(-28, 36);
+      left: em(-8, 36);
+      width: em(19, 36);
+      height: em(18, 36);
+      background: url('/assets/if-logo.png') no-repeat center center;
+      background-size: cover;
+    }
+  }
+  h2 {
+    font-size: em(19);
+    margin-bottom: em(24,19);
+  }
+  a.button {
+    margin: em(34, 14) auto;
+  }
+  h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: em(18);
+    padding-bottom: em(19, 18);
+  }
+}
+
+ul.companies {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  width: em(940);
+  line-height: 0;
+  li {
+    display: inline-block;
+    width: em(94);
+    height: em(74);
+    background: rgba(255,255,255, 0.5);
+    border: em(0.5) solid rgba(0,0,0, 0);
+    background-clip: padding-box;
+  }
+}
+section {
+  line-height: 0;
+}
+section.projects h2, section.info h2 {
+  @include span-columns(24);
+  text-transform: uppercase;
+  color: #2c2c2c;
+}
+/**
+* projects
+*/
+section.projects {
+  @include outer-container;
+
+  h2 {
+    font-size: em(24);
+    line-height: em(24, 24);
+    span {
+      color:#9d9d9d;
+      padding-left: em(5, 24);
+      font-size: em(12, 24);
+    }
+  }
+  .project {
+    cursor: pointer;
+    display: inline-block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    .info {
+      visibility:hidden;
+      opacity: 0;
+      background-color:  rgba(0, 0, 0, 0.73);
+      transition-duration: 1s;
+    }
+    &:hover .info {
+      visibility:visible;
+      opacity:1;
+    }
+  }
+  .top-projects {
+    width:100%;
+    min-width: $min-container;
+    line-height: 0;
+    .project {
+      height: em(240);
+      width: em(475);
+      .info {
+        height: em(240);
+        padding: em(29);
+        width: em(475);
+
+        h3 {
+          color: #fff;
+          font-weight: 700;
+          text-transform: uppercase;
+          font-size: em(24);
+          line-height: em(25, 24);
+          width: em(250, 24);
+          margin: 0;
+          padding: 0;
+          float: left;
+        }
+
+        img {
+          float: right;
+        }
+        p {
+          clear: both;
+          color:  #fff;
+          font-size: em(14);
+          font-weight: 400;
+          line-height: em(18, 14);
+          padding-top: em(80, 14);
+        }
+      }
+    }
+    .urban-space {
+      background-image: url('/assets/projects/urban-space.jpg');
+    }
+    .city-brand {
+      background-image: url('/assets/projects/city-brand.jpg');
+    }
+    .other {
+      background-image: url('/assets/projects/other.jpg');
+    }
+    .grunvaldska {
+      background-image: url('/assets/projects/grunvaldska.jpg');
+    }
+  }
+
+  .other-projects {
+    margin-top: 10px;
+    width: 100%;
+    min-width: $min-container;
+    line-height: 0;
+
+    .project {
+      width: em(237);
+      height: em(240);
+      position: relative;
+      .info {
+        width: em(237);
+        height: em(240);
+        display: table;
+        h3 {
+          color: #fff;
+          display: table-cell;
+          text-align:center;
+          font-size: em(18);
+
+          text-transform: uppercase;
+          font-weight: 700;
+
+          vertical-align: middle;
+          margin: 0;
+          line-height: em(24, 18);
+          padding: 0;
+        }
+      }
+    }
+
+    .p1 {
+      background-image: url('/assets/projects/small/p1.jpg');
+    }
+    .p2 {
+      background-image: url('/assets/projects/small/p2.jpg');
+    }
+    .p3 {
+      background-image: url('/assets/projects/small/p3.jpg');
+    }
+    .p4 {
+      background-image: url('/assets/projects/small/p4.jpg');
+    }
+    .p5 {
+      background-image: url('/assets/projects/small/p5.jpg');
+    }
+    .p6 {
+      background-image: url('/assets/projects/small/p6.jpg');
+    }
+  }
+}
+/**
+* info
+*/
+section.info {
+  h2 {
+    margin-top: 0;
+    font-size: em(42);
+    margin: em(74,42) 0 em(55, 42);
+    line-height: em(24, 42);
+  }
+  @include outer-container;
+  article {
+    font-size: em(14);
+    font-weight: 400;
+    line-height: em(20, 14);
+    color: #5a5a5a;
+    margin-bottom: em(47, 14);
+    h3 {
+      font-size: em(30, 14);
+      line-height: em(30, 30);
+      margin: 0 0 em(20, 30);
+      font-weight: 300;
+      color: #181818;
+    }
+    h5 {
+      font-weight: 700;
+      margin:0 0 em(20, 14);
+    }
+    ul {
+      padding: 0 0 0 em(15, 14);
+
+      li {
+        list-style-image: url('/assets/bullet.png');
+      }
+    }
+  }
+  .vision {
+    @include span-columns(24);
+  }
+  .values {
+    @include span-columns(10);
+  }
+  .tasks {
+    @include span-columns(14);
+  }
 }
