@@ -8,8 +8,8 @@ html {
   font-family: 'Open Sans', sans-serif;
   background: #e6e6e6;
 }
-
-nav ul {
+.container { @include outer-container; }
+nav ul, .contacts ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -27,9 +27,7 @@ a.button {
   color: #fff;
   font-size: em(14);
   border-radius: 30px;
-  &.red {
-    background-color:  #ff1e07;
-  }
+  &.red { background-color: #ff1e07; }
   &:before {
     display: inline-block;
     margin: 0 7px 0 -7px;
@@ -46,9 +44,9 @@ a.button {
 */
 header{
   width: 100%;
-  background-color:  rgba(0, 0, 0, 0.4);
-  height: em(80);
   min-width: $min-container;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: em(80);
   position: absolute;
   .logo {
     width: em(63);
@@ -64,9 +62,7 @@ header{
       float: left;
       font-size: em(14);
       text-transform: uppercase;
-      &.title {
-        padding: 0 em(15);
-      }
+      &.title { padding: 0 em(15); }
     }
   }
 
@@ -79,9 +75,7 @@ header{
     padding: em(5) em(15);
     text-decoration: none;
   }
-  nav a:hover, ul.languages a:hover {
-    background-color:  rgba(255, 255, 255, 0.25);
-  }
+  nav a:hover, ul.languages a:hover { background-color:  rgba(255, 255, 255, 0.25); }
   ul.languages {
     float: right;
     list-style-type: none;
@@ -129,9 +123,7 @@ header{
     font-size: em(19);
     margin-bottom: em(24,19);
   }
-  a.button {
-    margin: em(34, 14) auto;
-  }
+  a.button { margin: em(34, 14) auto; }
   h3 {
     text-transform: uppercase;
     font-weight: 700;
@@ -155,9 +147,7 @@ ul.companies {
     background-clip: padding-box;
   }
 }
-section {
-  line-height: 0;
-}
+section { line-height: 1em; }
 section.projects h2, section.info h2 {
   @include span-columns(24);
   text-transform: uppercase;
@@ -219,9 +209,7 @@ section.projects {
           float: left;
         }
 
-        img {
-          float: right;
-        }
+        img { float: right; }
         p {
           clear: both;
           color:  #fff;
@@ -232,18 +220,10 @@ section.projects {
         }
       }
     }
-    .urban-space {
-      background-image: url('/assets/projects/urban-space.jpg');
-    }
-    .city-brand {
-      background-image: url('/assets/projects/city-brand.jpg');
-    }
-    .other {
-      background-image: url('/assets/projects/other.jpg');
-    }
-    .grunvaldska {
-      background-image: url('/assets/projects/grunvaldska.jpg');
-    }
+    .urban-space { background-image: url('/assets/projects/urban-space.jpg'); }
+    .city-brand { background-image: url('/assets/projects/city-brand.jpg'); }
+    .other { background-image: url('/assets/projects/other.jpg'); }
+    .grunvaldska { background-image: url('/assets/projects/grunvaldska.jpg'); }
   }
 
   .other-projects {
@@ -277,37 +257,25 @@ section.projects {
       }
     }
 
-    .p1 {
-      background-image: url('/assets/projects/small/p1.jpg');
-    }
-    .p2 {
-      background-image: url('/assets/projects/small/p2.jpg');
-    }
-    .p3 {
-      background-image: url('/assets/projects/small/p3.jpg');
-    }
-    .p4 {
-      background-image: url('/assets/projects/small/p4.jpg');
-    }
-    .p5 {
-      background-image: url('/assets/projects/small/p5.jpg');
-    }
-    .p6 {
-      background-image: url('/assets/projects/small/p6.jpg');
-    }
+    .p1 { background-image: url('/assets/projects/small/p1.jpg'); }
+    .p2 { background-image: url('/assets/projects/small/p2.jpg'); }
+    .p3 { background-image: url('/assets/projects/small/p3.jpg'); }
+    .p4 { background-image: url('/assets/projects/small/p4.jpg'); }
+    .p5 { background-image: url('/assets/projects/small/p5.jpg'); }
+    .p6 { background-image: url('/assets/projects/small/p6.jpg'); }
   }
 }
 /**
 * info
 */
 section.info {
+  @include outer-container;
   h2 {
     margin-top: 0;
     font-size: em(42);
     margin: em(74,42) 0 em(55, 42);
     line-height: em(24, 42);
   }
-  @include outer-container;
   article {
     font-size: em(14);
     font-weight: 400;
@@ -328,19 +296,125 @@ section.info {
     }
     ul {
       padding: 0 0 0 em(15, 14);
-
-      li {
-        list-style-image: url('/assets/bullet.png');
-      }
+      li { list-style-image: url('/assets/bullet.png'); }
     }
   }
-  .vision {
-    @include span-columns(24);
+  .vision { @include span-columns(24); }
+  .values { @include span-columns(11); }
+  .tasks { @include span-columns(13); }
+}
+
+.mission {
+  background: url('/assets/photo2.jpg') no-repeat center center;
+  background-size: cover;
+  height: em(242);
+  width: 100%;
+  min-width: $min-container;
+  .left { @include span-columns(19); }
+  .right { @include span-columns(5); }
+  a.button { margin: em(109, 14) 0 0; }
+  h3 {
+    margin: em(73,24) 0 0;
+    padding: 0;
+    line-height: 1em;
+    color: #fff;
+    font-weight: 700;
+    font-size: em(24);
+    text-transform: uppercase;
   }
-  .values {
-    @include span-columns(11);
+  p {
+    color: #fff;
+    line-height: 1em;
+    margin: em(5,48) 0 0;
+    text-transform: uppercase;
+    font-size: em(48);
+    font-weight: 300;
   }
-  .tasks {
-    @include span-columns(13);
+}
+
+.contacts {
+  color: #181818;
+  line-height: em(23);
+  @include outer-container;
+  .icon {
+    width: em(44);
+    height: em(43);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: em(60) auto em(22);
+  }
+  span {
+    color: #949494;
+    &:after {
+      content: " ";
+    }
+  }
+  .phones {
+    @include span-columns(4);
+    @include shift(2);
+    .icon { background-image: url('/assets/icon-phone.png'); }
+  }
+  .emails {
+    @include span-columns(6);
+    @include shift(3);
+    .icon { background-image: url('/assets/icon-mail.png'); }
+  }
+  .adress {
+    @include span-columns(6);
+    @include shift(2);
+    line-height: em(23);
+    .icon { background-image: url('/assets/icon-adress.png'); }
+  }
+}
+.footer {
+  background: #090909;
+  color: #fff;
+  font-size: em(14);
+  position: relative;
+  height: em(36, 14);
+  // line-height: em(36, 14);
+  vertical-align: middle;
+  margin: em(79, 14) 0 0;
+  width: 100%;
+  text-align: center;
+  min-width: $min-container;
+  .made-in {
+    position: absolute;
+    left: em(20, 14);
+    top: em(9, 14);
+    &:before {
+      content: ' ';
+      display: inline-block;
+      background: url('/assets/if-logo2d.png');
+      width: em(14, 14);
+      height: em(14, 14);
+      margin-right: em(10, 14);
+      position: relative;
+      top: em(2, 14);
+    }
+  }
+  .warm-city {
+    position: absolute;
+    top: em(1, 14);
+    &:before {
+      content: ' ';
+      display: inline-block;
+      background: url('/assets/warm-if-logo2d.png');
+      width: em(25, 14);
+      margin-right: em(9, 14);
+      height: em(24, 14);
+      position: relative;
+      top: em(4, 14);
+    }
+  }
+  .webmil {
+    position: absolute;
+    right: em(20, 14);
+    top: em(5, 14);
+    img {
+      height: em(20, 14);
+      width: em(28, 14);
+    }
   }
 }
