@@ -140,10 +140,10 @@ ul.companies {
   line-height: 0;
   li {
     display: inline-block;
-    width: em(94);
+    width: em(92);
     height: em(74);
     background: rgba(255,255,255, 0.5);
-    border: em(0.5) solid rgba(0,0,0, 0);
+    border: em(1) solid rgba(0,0,0, 0);
     background-clip: padding-box;
   }
 }
@@ -387,6 +387,7 @@ section.info {
       content: ' ';
       display: inline-block;
       background: url('/assets/if-logo2d.png');
+      background-size: cover;
       width: em(14, 14);
       height: em(14, 14);
       margin-right: em(10, 14);
@@ -401,6 +402,7 @@ section.info {
       content: ' ';
       display: inline-block;
       background: url('/assets/warm-if-logo2d.png');
+      background-size: cover;
       width: em(25, 14);
       margin-right: em(9, 14);
       height: em(24, 14);
