@@ -7,6 +7,10 @@
 html {
   font-family: 'Open Sans', sans-serif;
   background: #e6e6e6;
+  min-width: $min-container;
+}
+body {
+  min-width: $min-container;
 }
 .container { @include outer-container; }
 nav ul, .contacts ul {
@@ -136,11 +140,11 @@ ul.companies {
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
-  width: em(920);
+  width: em(940);
   line-height: 0;
   li {
     display: inline-block;
-    width: em(92);
+    width: em(94);
     height: em(74);
     background: rgba(255,255,255, 0.5);
     border: em(1) solid rgba(0,0,0, 0);
@@ -158,7 +162,7 @@ section.projects h2, section.info h2 {
 */
 section.projects {
   @include outer-container;
-
+  $mobile: new-breakpoint(max-width 700px 4);
   h2 {
     font-size: em(24);
     line-height: em(24, 24);
@@ -179,6 +183,7 @@ section.projects {
       opacity: 0;
       background-color:  rgba(0, 0, 0, 0.73);
       transition-duration: 1s;
+      @include fill-parent;
     }
     &:hover .info {
       visibility:visible;
@@ -186,16 +191,20 @@ section.projects {
     }
   }
   .top-projects {
-    width:100%;
-    min-width: $min-container;
+    // width:100%;
+    max-width: $min-container;
     line-height: 0;
     .project {
       height: em(240);
-      width: em(475);
+      // width: em(475);
+      width: 50%;
+      // @include media($mobile) {
+      //   width: 100%;
+      // }
       .info {
         height: em(240);
         padding: em(29);
-        width: em(475);
+        // width: em(475);
 
         h3 {
           color: #fff;
@@ -387,7 +396,6 @@ section.info {
       content: ' ';
       display: inline-block;
       background: url('/assets/if-logo2d.png');
-      background-size: cover;
       width: em(14, 14);
       height: em(14, 14);
       margin-right: em(10, 14);
@@ -402,7 +410,6 @@ section.info {
       content: ' ';
       display: inline-block;
       background: url('/assets/warm-if-logo2d.png');
-      background-size: cover;
       width: em(25, 14);
       margin-right: em(9, 14);
       height: em(24, 14);
