@@ -2,15 +2,15 @@ doctype html
 html(lang="en")
   head
     title Template
-    // build:css /assets/app.css
     link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,cyrillic-ext")
+    // build:css /assets/app.css
     link(rel="stylesheet", href="/assets/app.css")
     // endbuild
 
   body
     block content
-
+    script(src="http://maps.googleapis.com/maps/api/js")
+    script(src="http://code.jquery.com/jquery-git1.min.js")
     // build:js /assets/app.js
-    script(src="//maps.googleapis.com/maps/api/js")
     script(src="/assets/app.js")
     // endbuild
