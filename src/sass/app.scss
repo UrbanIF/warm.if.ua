@@ -463,11 +463,30 @@ section.info {
 }
 
 .mission {
-  background: url('/assets/photo2.jpg') no-repeat center center;
-  background-size: cover;
+  overflow: hidden;
+  position: relative;
   height: em(242);
   width: 100%;
   min-width: $min-container;
+  .paralax {
+    top:0;
+    display:block;
+    left:0;
+    background: url('/assets/photo2.jpg') repeat top ;
+    // background-size: cover;
+    z-index: -1;
+    position: absolute;
+    // width: 100%;
+    
+    // transition: all 0.1s;
+  }
+  .container {
+
+    margin: 0 auto;
+    position: relative;
+    height: em(242);
+
+  }
   .left { @include span-columns(19); }
   .right { @include span-columns(5); }
   a.button { margin: em(109, 14) 0 0; }

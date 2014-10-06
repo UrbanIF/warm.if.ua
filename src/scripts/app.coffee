@@ -8,7 +8,7 @@ groups = [
     title: 'Арт',
     color: '#ff2f13',
     markers: [{
-      icon: '/assets/markers/icon1.png',
+      icon: 'assets/markers/icon1.png',
       title: 'marker1',
       address: 'вул. Л.Курбаса 5, Івано-Франківськ',
       coords: {
@@ -21,7 +21,7 @@ groups = [
     title: 'Проведені події',
     color: '#aaaf13',
     markers: [{
-      icon: '/assets/markers/icon4.png',
+      icon: 'assets/markers/icon4.png',
       title: 'marker1',
       address: 'вул. Галицька 65, Івано-Франківськ',
       coords: {
@@ -29,7 +29,7 @@ groups = [
         lng: 24.7092137
       }
       },{
-      icon: '/assets/markers/icon4.png',
+      icon: 'assets/markers/icon4.png',
       title: 'marker1',
       address: 'вул. Коновальця 25, Івано-Франківськ',
       coords: {
@@ -42,7 +42,7 @@ groups = [
     title: 'Реконструкція',
     color: '#002f13',
     markers: [{
-      icon: '/assets/markers/icon3.png',
+      icon: 'assets/markers/icon3.png',
       title: 'marker1',
       address: 'вул. Незалежносні 12, Івано-Франківськ',
       coords: {
@@ -113,3 +113,29 @@ initialize = ->
   initEvents()
 
 google.maps.event.addDomListener window, "load", initialize
+newPos = ( windowHeight, pos, adjuster, inertia) ->
+  (((windowHeight + pos) + adjuster) * inertia) + "px"
+
+$(document).ready ->
+  $element = $(".paralax")
+  elementPos = $element.offset().top
+
+  windowHeight = $(window).height()
+  $window = $(window)
+  $window.scroll ->
+    windowHeight = $window.height()
+
+    pos = $window.scrollTop()
+
+    if pos >= (elementPos-windowHeight)
+      $element.css visibility: 'visible'
+    else
+      $element.css visibility: 'hidden'
+    console.log 'pos: '+ pos
+    console.log 'elementPos: '+ elementPos
+    console.log '(elementPos-windowHeight): ' + (elementPos-windowHeight)
+    $element.css
+      transform: "translateY(#{newPos( windowHeight, pos, -3600, 0.5)})"
+
+
+    # pos-scrolled
