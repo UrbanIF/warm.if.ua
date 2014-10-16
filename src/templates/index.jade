@@ -20,7 +20,7 @@ block content
   section.header-image
     h1 Середовище «Тепле Місто»
     h2 Об’єднує людей і бізнеси, які підтримують ідеї та дії щодо сталого розвитку Івано-Франківська
-    a.button.red(href="#") долучитись
+    a.button.red(href="#") підтримати
     h3 Топ-50 найпрогресивніших компаній міста
 
     ul.companies
@@ -48,8 +48,8 @@ block content
       li
       li
         .content.white
-          a(href="#")
-            img(src="/assets/companies/23.png")
+          a(href="#", title='<h5>smm agency</h5><p>This is Photoshop\'s version  of Lorem Ipsum. Proin gravida nibh vel velit auctor</p><a href="http://smmagency.com.ua">Smmagency.com.ua</a>')
+            img(src="/assets/companies/23.png", data-hover="/assets/companies/23_hover.png")
       li
       li
       li
@@ -61,8 +61,8 @@ block content
 
       li
         .content.white
-          a(href="#")
-            img(src="/assets/companies/23.png")
+          a(href="#", title='<h5>smm agency</h5><p>This is Photoshop\'s version  of Lorem Ipsum. Proin gravida nibh vel velit auctor</p><a href="http://smmagency.com.ua">Smmagency.com.ua</a>')
+            img(src="/assets/companies/23.png", data-hover="/assets/companies/23_hover.png")
       li
       li
       li
@@ -71,8 +71,8 @@ block content
       li
       li
         .content.white
-          a(href="#")
-            img(src="/assets/companies/synt.png")
+          a(href="#", title='<h5>smm agency</h5><p>This is Photoshop\'s version  of Lorem Ipsum. Proin gravida nibh vel velit auctor</p><a href="http://smmagency.com.ua">Smmagency.com.ua</a>')
+            img(src="/assets/companies/synt.png", data-hover="/assets/companies/23_hover.png")
       li
       li
 
@@ -87,8 +87,15 @@ block content
       li
       li
         .content.add
-          a(href="#")
+          a(href="#", title='<h5>smm agency</h5><p>This is Photoshop\'s version  of Lorem Ipsum. Proin gravida nibh vel velit auctor</p><a href="http://smmagency.com.ua">Smmagency.com.ua</a>')
             img(src="/assets/companies/add.png")
+    .socials
+      a(href="http://twitter.com")
+        img(src="/assets/twitter-small.png")
+        | twitter
+      a.facebook(href="http://facebook.com")
+        img(src="/assets/facebook-small.png")
+        | facebook
     .triangle
 
   section.projects
@@ -162,31 +169,41 @@ block content
             br
             | «ТЕПЛЕ ВЕЛО-МІСТО»
 
-  section.map
-    .title проекти та події на мапі
-    #map-container
-    ul.list
-      li.all.active Всі
-      li.item
-        i
-        | Арт
-      li.item
-        i
-        | Реконструкція
-      li.item
-        i
-        | Створення
-      li.item
-        i
-        | Проведені події
-      li.item
-        i
-        | Заплановані події
-      li.item
-        i
-        | Незавершені
+  //- section.map
+  //-   .title проекти та події на мапі
+  //-   #map-container
+  //-   ul.list
+  //-     li.all.active Всі
+  //-     li.item
+  //-       i
+  //-       | Арт
+  //-     li.item
+  //-       i
+  //-       | Реконструкція
+  //-     li.item
+  //-       i
+  //-       | Створення
+  //-     li.item
+  //-       i
+  //-       | Проведені події
+  //-     li.item
+  //-       i
+  //-       | Заплановані події
+  //-     li.item
+  //-       i
+  //-       | Незавершені
+  section.mission
+    img.paralax(src="/assets/photo2.jpg")
+    .container
+      .triangle
+      .left
+        h3 Місія:
+        p Генерувати тепло в місті
+
+      .right
+        a.red.button підтримати
+
   section.info
-    h2 info
     article.vision
       h3 Візія
       h5 Прогресивне сучасне тепле місто з теплими людьми
@@ -209,47 +226,52 @@ block content
         li створення простору для реалізації активної молоді
         li економічне зростання проектів, залучених в ТМ і міста в цілому
         li формування свого унікального стилю міста
+  section.video
+    .play-link-container
+      a.how-it-works-link(href="#")
+        img(src="/assets/play-button.png")
+        | Як це працює
 
-  section.mission
-    img.paralax(src="/assets/photo2.jpg")
-    .container
-      .triangle
-      .left
-        h3 Місія:
-        p Генерувати тепло в місті
-
-      .right
-        a.red.button підтримати
-
+  section.news
+    h2 новини
+      span 18
+    .news-item
+      img(src="/assets/news/news1.jpg")
+      h4 В Украине появилос пианино, раздающее минеральную воду за музыку
+      p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+    .news-item
+      img(src="/assets/news/news1.jpg")
+      h4 Команда відкриває обличчя
+      p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum Duis sed odio sit amet
+    .news-item.last
+      img(src="/assets/news/news1.jpg")
+      h4 В Украине появилос пианино, раздающее минеральную
+      p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
+    .button-container
+      a.button.red(href="#") всі новини
   section.contacts
-    ul.phones
-      li.icon
-      li
-        span +380 98
-        | 954 31 21
-      li
-        span +380 55
-        | 954 31 21
-      li
-        span +380 66
-        | 004 32 00
-    ul.emails
-      li.icon
-      li
-        span E-mail:
+    .container
+      .email
+        span.icon
         | warmif@gmail.com
-      li
-        span Skype:
-        | qwerty-warmif
 
-    .adress
-      .icon
-      | м. Івано-Франківськ
-      br
-      | вул. Стасенка 48 / офіс 40
+      .adress
+        span.icon
+        | м. Івано-Франківськ, вул. Тринітарська 11, офіс 9
+
+      .socials
+        a.twitter(href="http://twitter.com")
+          img(src="/assets/icon-twitter.png")
+        a.facebook(href="http://facebook.com")
+          img(src="/assets/icon-facebook.png")
 
   section.footer
     span.made-in Made in Ivano-Frankivsk
     span.warm-city Warm-city 2014
     a.webmil(href='http://webmil.com.ua')
       img(src="/assets/webmil-logo.png")
+
+  .overlay
+    .center
+
+      iframe#player(src="//player.vimeo.com/video/94954902?title=0&byline=0&portrait=0&api=1&player_id=player" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true")
