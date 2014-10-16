@@ -36,14 +36,14 @@ gulp.task('optimize', function () {
     // Remove Any Unused CSS
     // Note: If not using the Style Guide, you can delete it from
     // the next line to only include styles your project uses.
-    .pipe(gulpIf('*.css', uncss({
-      html: glob.sync('.tmp/**/*.html')
-      // // CSS Selectors for UnCSS to ignore
-      // ,ignore: [
-      //   /.navdrawer-container.open/,
-      //   /.app-bar.open/
-      // ]
-    })))
+    // .pipe(gulpIf('*.css', uncss({
+    //   html: glob.sync('.tmp/**/*.html')
+    //   // // CSS Selectors for UnCSS to ignore
+    //   ,ignore: [
+    //     /.navdrawer-container.open/,
+    //     /.app-bar.open/
+    //   ]
+    // })))
 
     .pipe(gulpIf('*.css', autoprefixer(AUTOPREFIXER_BROWSERS)))
     // Concatenate And Minify Styles
