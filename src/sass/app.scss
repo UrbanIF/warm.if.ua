@@ -770,3 +770,39 @@ section.news {
 body.with-overlay {
   overflow: hidden;
 }
+
+.progress {
+  z-index: 999;
+  width: em(941);
+  margin: em(7) auto 0;
+  position: relative;
+  .desc {
+
+    font-weight: 700;
+    position: absolute;
+    // right: em(1, 14);
+    top: em(-4, 14);
+    color: #fff;
+    font-size: em(14);
+  }
+  .progress-bar {
+    position: absolute;
+    right: em(2);
+    top: em(2);
+    width: em(890);
+    background: rgba(255, 255, 255, 0.5);
+
+    height: em(6);
+
+    .filled {
+      height: em(6);
+      background: rgba(255, 255, 255, 1);
+      width: 0;
+      -webkit-transition: width 5s ease-in-out;
+      -moz-transition: width 5s ease-in-out;
+      -o-transition: width 5s ease-in-out;
+      transition: width 5s ease-in-out;
+
+    }
+  }
+}

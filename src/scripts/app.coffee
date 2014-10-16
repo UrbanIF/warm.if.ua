@@ -119,14 +119,19 @@ newPos = ( windowHeight, pos, adjuster, inertia) ->
   (((windowHeight + pos) + adjuster) * inertia) + "px"
 
 $ ->
+
   $overlay = $('.overlay')
   $window = $(window)
   $element = $(".paralax")
   iframe = $('#player')[0]
 
+  width = $('.filled').data('width')
+  $('.filled').width(width)
+
   $('li .content.white a').tooltipster(
     contentAsHTML: true
     theme: 'tooltipster-warm'
+    interactive: true
   )
 
   $('.how-it-works-link'). on 'click', (e)->
