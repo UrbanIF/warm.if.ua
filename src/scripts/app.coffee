@@ -119,8 +119,9 @@ newPos = ( windowHeight, pos, adjuster, inertia) ->
   (((windowHeight + pos) + adjuster) * inertia) + "px"
 
 $ ->
-
-  $overlay = $('.overlay')
+  $videoOverlay = $('.video-overlay')
+  $dialogOverlay = $('.dialog-overlay')
+  $supportButton = $('.support-button')
   $window = $(window)
   $element = $(".paralax")
   iframe = $('#player')[0]
@@ -134,19 +135,30 @@ $ ->
     interactive: true
   )
 
+  showOverlay = ($container)->
+    $container.addClass('visible')
+    $('html').addClass('with-overlay')
+  hideOverlay = ($container)->
+    $container.removeClass('visible')
+    $('html').removeClass('with-overlay')
+
   $('.how-it-works-link'). on 'click', (e)->
     player = $f(iframe)
     e.preventDefault()
-    $overlay.addClass('visible')
-    $('body').addClass('with-overlay')
+    showOverlay($videoOverlay)
     player.api('play')
 
-  $overlay.on 'click', ->
+  $videoOverlay.on 'click', ->
     player = $f(iframe)
     player.api('pause')
-    $overlay.removeClass('visible')
-    $('body').removeClass('with-overlay')
+    hideOverlay($videoOverlay)
 
+  $supportButton. on 'click', (e)->
+    e.preventDefault()
+    showOverlay($dialogOverlay)
+
+  $('.dialog-overlay .close'). on 'click', ->
+    hideOverlay($dialogOverlay)
 
   $('li .content.white a').on
     'mouseenter': ->

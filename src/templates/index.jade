@@ -20,7 +20,7 @@ block content
   section.header-image
     h1 Середовище «Тепле Місто»
     h2 Об’єднує людей і бізнеси, які підтримують ідеї та дії щодо сталого розвитку Івано-Франківська
-    a.button.red(href="#") підтримати
+    a.button.red.support-button(href="#") підтримати
     h3 Топ-50 найпрогресивніших компаній міста
 
     ul.companies
@@ -92,7 +92,7 @@ block content
     .progress
       .desc 50/50
       .progress-bar
-        .filled(data-width=550)
+        .filled(data-width='450')
 
 
     .socials
@@ -207,7 +207,7 @@ block content
         p Генерувати тепло в місті
 
       .right
-        a.red.button підтримати
+        a.button.red.support-button(href="#") підтримати
 
   section.info
     article.vision
@@ -277,7 +277,23 @@ block content
     a.webmil(href='http://webmil.com.ua')
       img(src="/assets/webmil-logo.png")
 
-  .overlay
+  .overlay.video-overlay
     .center
-
       iframe#player(src="//player.vimeo.com/video/94954902?title=0&byline=0&portrait=0&api=1&player_id=player" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true")
+    .close
+
+  .overlay.dialog-overlay.white
+    .center
+      .step1
+        .title
+          p Обирай форму допомоги нам
+          .line
+        .left
+          img.lamp(src="/assets/lamp.png", alt="lamp")
+          h5 прогресивна компанія
+          a.support-button(href="") підтримати як організація
+        .right
+          img.transformer(src="/assets/transformer.png", alt="transformer")
+          h5 прогресивна людина
+          a.support-button(href="") підтримати як людина
+    .close
