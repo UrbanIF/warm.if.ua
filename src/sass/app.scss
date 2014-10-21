@@ -34,7 +34,7 @@ a.button {
   &.red { background-color: #ff1e07; }
   &:before {
     display: inline-block;
-    margin: 0 7px 0 -7px;
+    margin: 0 em(7,14) 0 em(-7, 14);
     content: '';
     width: em(10, 14);
     height: em(10, 14);
@@ -234,7 +234,7 @@ section.projects {
   .project {
     cursor: pointer;
     display: inline-block;
-    background-size: 100% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     transition: background-size 0.4s ease-in;
@@ -243,10 +243,11 @@ section.projects {
       opacity: 0;
       background-color:  rgba(0, 0, 0, 0.73);
       transition-duration: 0.4s;
+      position: relative;
       @include fill-parent;
     }
     &:hover {
-      background-size: 110% 110%;
+      background-size: 110%;
     }
     &:hover .info {
       visibility:visible;
@@ -260,8 +261,8 @@ section.projects {
     line-height: 0;
     .project {
       height: em(240);
-      // width: em(475);
-      width: 50%;
+      width: em(474);
+      // width: 50%;
       // @include media($mobile) {
       //   width: 100%;
       // }
@@ -293,7 +294,10 @@ section.projects {
           font-size: em(14);
           font-weight: 400;
           line-height: em(18, 14);
-          padding-top: em(80, 14);
+          position: absolute;
+          bottom: em(10, 14);
+          width: em(410, 14);
+          // padding-top: em(80, 14);
         }
       }
     }
@@ -304,7 +308,7 @@ section.projects {
   }
 
   .other-projects {
-    margin-top: 10px;
+    margin-top: em(10);
     width: 100%;
     min-width: $min-container;
     line-height: 0;
@@ -340,6 +344,8 @@ section.projects {
     .p4 { background-image: url('/assets/projects/small/p4.jpg'); }
     .p5 { background-image: url('/assets/projects/small/p5.jpg'); }
     .p6 { background-image: url('/assets/projects/small/p6.jpg'); }
+    .p7 { background-image: url('/assets/projects/small/p6.jpg'); }
+    .p8 { background-image: url('/assets/projects/small/p6.jpg'); }
   }
 }
 
@@ -763,7 +769,7 @@ section.news {
   &.white {
     background: #fff;
   }
-  .close {
+  .close, .back {
     position: absolute;
     top: em(20);
     right: em(20);
@@ -772,6 +778,10 @@ section.news {
     background: url('/assets/close.png') no-repeat;
     background-size: cover;
     cursor: pointer;
+  }
+  .back {
+    right: em(65);
+    background: url('/assets/arrow.png') no-repeat;
   }
   .center {
     // overflow: auto;
@@ -788,63 +798,110 @@ section.news {
   }
 }
 .dialog-overlay {
-  .step1 {
-    .title {
-      color: #7b7b7b;
-      font-size: em(18);
-      font-style: italic;
-      position: absolute;
-      top: em(20, 18);
-      p {
-        margin: 0 0 em(10, 18);
-      }
-      .line {
-        width: em(44, 18);
-        height: em(2, 18);
-        background: #d7d7d7;
-      }
+  .title {
+    color: #7b7b7b;
+    font-size: em(18);
+    font-style: italic;
+    position: absolute;
+    top: em(20, 18);
+    left: em(20, 18);
+    p {
+      margin: 0 0 em(10, 18);
     }
-    text-align: left;
-    width: em(780);
-    height: em(200);
-    margin: 0 auto;
-    .left { float: left; }
-    .right{ float: right; }
-    h5 {
-      text-transform: uppercase;
-      margin: 0 0 em(40, 40);
-      color: #242424;
-      font-size: em(40);
-      font-weight: 700;
-      line-height: em(46, 40);
-      width: em(303,40);
-      height: em(85, 40);
-    }
-    .lamp {
-      width: em(24);
-      height: em(26);
-    }
-    .transformer {
-      width: em(22);
-      height: em(23);
+    .line {
+      width: em(44, 18);
+      height: em(2, 18);
+      background: #d7d7d7;
     }
   }
-
+  .left { float: left; }
+  .right{ float: right; }
+  h5 {
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #242424;
+  }
+  img {
+    margin-bottom: em(10);
+  }
+  .lamp {
+    width: em(24);
+    height: em(26);
+  }
+  .transformer {
+    width: em(22);
+    height: em(23);
+  }
+  .super {
+    width: em(29);
+    height: em(20);
+  }
+  .diamond {
+    width: em(25);
+    height: em(20);
+  }
   .support-button {
     text-decoration: none;
-    border: 2px solid #ffd33a;
+    border: em(2, 14) solid #ffd33a;
     color: #242424;
     font-size: em(14);
     font-style: italic;
     line-height: em(46, 14);
-    padding: em(12) em(17);
-    width: em(164);
-    height: em(13);
+    padding: em(12, 14) em(17,14);
+    width: em(164, 14);
+    height: em(13, 14);
     &:hover {
-      border: 2px solid #ed6421;
+      border: em(2, 14) solid #ed6421;
 
     }
   }
+  .steps {
+    text-align: left;
+    height: em(200);
+    margin: 0 auto;
+    .block {
+      display: inline-block;
+      width: em(315);
+      height: em(100);
+    }
+  }
+  .step1 {
+    width: em(780);
+    h5 {
+      font-size: em(40);
+      margin: 0 0 em(40, 40);
+      line-height: em(46, 40);
+      width: em(303,40);
+      height: em(85, 40);
+    }
+  }
+
+  .step2 {
+    width: em(910);
+    display: none;
+    .block {
+      &.first{ width: em(315);}
+      &.second { width: em(330); }
+      &.last { width: em(265); }
+      p {
+        font-size: em(12);
+        font-weight: 400;
+        line-height: em(18, 12);
+        width: em(230, 12);
+        margin: 0 0 em(45, 12);
+      }
+      h5 {
+        font-size: em(24);
+        line-height: em(24, 24);
+        margin: 0 0 em(30, 24);
+      }
+    }
+  }
+  .step2c {
+    width: em(945);
+    display: none;
+  }
+
 }
 
 html.with-overlay {

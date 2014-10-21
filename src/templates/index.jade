@@ -109,31 +109,31 @@ block content
       span 16
 
     .top-projects
-      .project.urban-space
+      .project.urban-space(data-href="http://www.urbanspace.if.ua")
         .info
-          h3 проект «грюнвальдська»
+          h3 «Urban Space 100»
           img(src='/assets/projects/grunvaldska-logo.png')
           p
-            | This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum...
+            | Соціальне підприємство у форматі ресторану є успішним прикладом об’єднання громади навколо спільної ідеї. Прибуток ресторану направляється виключно на реалізацію громадських проектів міста.
 
       .project.grunvaldska
         .info
-          h3 проект «грюнвальдська»
+          h3 проект «Грюнвальдська»
           img(src='/assets/projects/grunvaldska-logo.png')
           p
-            | This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum...
+            | Проект перетворення Грюнвальдської на найкращу вулицю в Європі та модель «нового Івано-Франківська» як ідеального міста в межах локальної території.
 
-      .project.city-brand
+      .project.city-brand(data-href="http://www.city-brand.if.ua")
         .info
-          h3 проект «грюнвальдська»
+          h3 Візуальний стиль міста
           img(src='/assets/projects/grunvaldska-logo.png')
           p
-            | This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum...
+            | В 2014 році в було представлено новий стиль міста. Івано-Франківськ отримав логотип, правила щодо розміщення вуличної навігації і впорядкування зовнішньої реклами на фасадах будинків. Логотип став фіналістом Фестивалю «Каннські леви»
 
       .project.other
         .info
           h3 проект «грюнвальдська»
-          img(src='/assets/projects/grunvaldska-logo.png')
+          //- img(src='/assets/projects/grunvaldska-logo.png')
           p
             | This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum...
 
@@ -143,37 +143,44 @@ block content
           h3
             | проект
             br
-            | «ТЕПЛЕ ВЕЛО-МІСТО»
+            | «Вивіски»
       .project.p2
         .info
           h3
             | проект
             br
-            | «ТЕПЛЕ ВЕЛО-МІСТО»
+            | «Теплий Арт»
       .project.p3
         .info
             h3
-              | проект
-              br
-              | «ТЕПЛЕ ВЕЛО-МІСТО»
+              | Дитячий міський простір
       .project.p4
         .info
           h3
             | проект
             br
-            | «ТЕПЛЕ ВЕЛО-МІСТО»
+            | «Теплі поштівки»
       .project.p5
         .info
           h3
-            | проект
-            br
-            | «ТЕПЛЕ ВЕЛО-МІСТО»
+            | Тепле IT-середовище
       .project.p6
         .info
           h3
-            | проект
-            br
-            | «ТЕПЛЕ ВЕЛО-МІСТО»
+            | Тепла Освіта
+      .project.p7
+        .info
+          h3
+            | Теплі фестивалі
+      .project.p8
+        .info
+          h3
+            | Теплі заклади
+      .project.p9
+        .info
+          h3
+            | Теплий туристичний посібник
+
 
   //- section.map
   //-   .title проекти та події на мапі
@@ -284,16 +291,49 @@ block content
 
   .overlay.dialog-overlay.white
     .center
-      .step1
+      .steps.step1
         .title
           p Обирай форму допомоги нам
           .line
         .left
           img.lamp(src="/assets/lamp.png", alt="lamp")
           h5 прогресивна компанія
-          a.support-button(href="") підтримати як організація
+          a.support-button.as-company(href="") підтримати як організація
         .right
           img.transformer(src="/assets/transformer.png", alt="transformer")
           h5 прогресивна людина
-          a.support-button(href="") підтримати як людина
+          a.support-button.as-human(href="") підтримати як людина
+      .steps.step2
+        .title
+          p допомоги нам як людина
+          .line
+        .block.first
+          img.diamond(src="/assets/diamond.png", alt="diamond")
+          h5 Фондуй
+          p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor
+          a.support-button(href="") допомогти матеріально
+        .block.second
+          img.super(src="/assets/super.png", alt="super")
+          h5 Стань учасником
+          p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor
+          a.support-button(href="") долучитись
+        .block.last
+          h5 online store
+          p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor
+          a.support-button(href="") до асортименту
+      .steps.step2c
+        .title
+          p допомоги нам як компанія
+          .line
+        .block.first
+          img.diamond(src="/assets/diamond.png", alt="diamond")
+          h5 Стати бізнес партнером
+          p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor
+          a.support-button(href="") долучитись
+        .block.second
+          img.super(src="/assets/super.png", alt="super")
+          h5 допомогти грошима
+          p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor
+          a.support-button(href="") допомогти матеріально
+    .back
     .close

@@ -187,5 +187,47 @@ $ ->
     $element.css
       transform: "translateY(#{newPos( windowHeight, pos, -3600, 0.5)})"
 
+  dialog = do ->
+    $defaultStep = $('.step1')
+    $humanStep = $('.step2')
+    $companyStep = $('.step2c')
+    $backButton = $('.back')
+    $currentStep = $defaultStep
 
-    # pos-scrolled
+    previousSteps = []
+
+    checkBackButton = ->
+      $backButton.show() if previousSteps.length > 0
+      $backButton.hide() if previousSteps.length is 0
+
+    transitToStep = ($nextStep) ->
+      $currentStep.fadeOut 'fast', ->
+        $nextStep.fadeIn 'fast'
+      previousSteps.push $currentStep
+      checkBackButton()
+      $currentStep = $nextStep
+
+    backStep = ->
+      $previous = previousSteps.pop()
+      if $previous
+        $currentStep.fadeOut 'fast', ->
+          $previous.fadeIn 'fast'
+        checkBackButton()
+        $currentStep = $previous
+
+    showHumanStep = ->
+      transitToStep($humanStep)
+
+    showCompanyStep = ->
+      transitToStep($companyStep)
+
+    checkBackButton()
+    $('.step1 .as-human').on 'click', showHumanStep
+    $('.step1 .as-company').on 'click', showCompanyStep
+    $('.back').on 'click', backStep
+    $('.project'). on 'click', ->
+      href = $(@).data('href')
+      window.open(href) unless href is undefined
+
+
+  # pos-scrolled
