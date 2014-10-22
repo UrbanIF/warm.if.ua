@@ -1106,9 +1106,12 @@ section.news-item {
     @include span-columns(24);
     line-height: em(100);
     img {
-      margin-right: em(45);
+      margin-right: em(57);
       height: em(110);
       width: em(110);
+      &:nth-child(6n){
+        margin: 0;
+      }
     }
   }
   .buttons {
