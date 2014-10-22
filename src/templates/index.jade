@@ -2,7 +2,8 @@ extends layout/default
 
 block content
   header
-    img.logo(src='/assets/logo.png')
+    a(href="/")
+      img.logo(src='/assets/logo.png')
     nav
       ul
         li.title тепле місто
@@ -11,7 +12,7 @@ block content
         li
           a(href="#") про нас
         li
-          a(href="#") партнери
+          a(href="partners.html") партнери
     ul.languages
       li
         a(href="#") ua
@@ -252,16 +253,19 @@ block content
       img(src="/assets/news/news1.jpg")
       h4 В Украине появилос пианино, раздающее минеральную воду за музыку
       p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+      time 12.12.14
     .news-item
       img(src="/assets/news/news1.jpg")
       h4 Команда відкриває обличчя
       p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum Duis sed odio sit amet
+      time 12.12.14
     .news-item.last
       img(src="/assets/news/news1.jpg")
       h4 В Украине появилос пианино, раздающее минеральную
       p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
+      time 12.12.14
     .button-container
-      a.button.red(href="#") всі новини
+      a.button.red(href="news.html") всі новини
   section.contacts
     .container
       .email
@@ -298,11 +302,11 @@ block content
         .left
           img.lamp(src="/assets/lamp.png", alt="lamp")
           h5 прогресивна компанія
-          a.support-button.as-company(href="") підтримати як організація
+          a.dialog-button.as-company(href="") підтримати як організація
         .right
           img.transformer(src="/assets/transformer.png", alt="transformer")
           h5 прогресивна людина
-          a.support-button.as-human(href="") підтримати як людина
+          a.dialog-button.as-human(href="") підтримати як людина
       .steps.step2
         .title
           p допомоги нам як людина
@@ -311,16 +315,16 @@ block content
           img.diamond(src="/assets/diamond.png", alt="diamond")
           h5 Фондуй
           p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor
-          a.support-button(href="") допомогти матеріально
+          a.dialog-button(href="") допомогти матеріально
         .block.second
           img.super(src="/assets/super.png", alt="super")
           h5 Стань учасником
           p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor
-          a.support-button(href="") долучитись
+          a.dialog-button(href="") долучитись
         .block.last
           h5 online store
           p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor
-          a.support-button(href="") до асортименту
+          a.dialog-button(href="") до асортименту
       .steps.step2c
         .title
           p допомоги нам як компанія
@@ -329,11 +333,17 @@ block content
           img.diamond(src="/assets/diamond.png", alt="diamond")
           h5 Стати бізнес партнером
           p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor
-          a.support-button(href="") долучитись
+          a.dialog-button(href="") долучитись
         .block.second
           img.super(src="/assets/super.png", alt="super")
           h5 допомогти грошима
           p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor
-          a.support-button(href="") допомогти матеріально
+          a.dialog-button(href="") допомогти матеріально
+
+      .steps.success-step
+          img.success(src="/assets/success.png", alt="success")
+          h5 Дякуємо! Вашу заявку прийнято
+          p очікуйте лист відповідь на пошту
+          a.close-link(href="#") закрити
     .back
     .close

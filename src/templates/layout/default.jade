@@ -9,7 +9,9 @@ html(lang="en")
     link(rel="stylesheet", href="/assets/app.css")
     // endbuild
 
-  body
+  - var bodyClass = '';
+  block vars
+  body(class='#{bodyClass}')
     block content
     //- script(src="http://maps.googleapis.com/maps/api/js")
     script(src="http://code.jquery.com/jquery-git1.min.js")

@@ -1,0 +1,94 @@
+extends layout/default
+block vars
+  - var bodyClass = 'news'
+
+block content
+  header
+    a(href="/")
+      img.logo(src='/assets/logo.png')
+    nav
+      ul
+        li.title тепле місто
+        li
+          a(href="#") Проекти
+        li
+          a(href="#") про нас
+        li
+          a(href="partners.html") партнери
+    ul.languages
+      li
+        a(href="#") ua
+      li
+        a(href="#") en
+
+  section.news-list
+    .month
+      h4 2014 жовтень
+      ul
+        li
+          time
+            | 27
+            span жов
+          .short-news-item
+            a(href="news_open.html") This is Photoshop's version  of Lorem IpsuProin gravida nibh
+            p This is Photoshop's version  of Lorem IpsuProin gravida nibh This is Photoshop's version  of Lorem IpsuProin gravida nibh
+        li
+          time
+            | 27
+            span жов
+          .short-news-item
+            a(href="news_open.html") This is Photoshop's version  of Lorem IpsuProin gravida nibh
+            p This is Photoshop's version  of Lorem IpsuProin gravida nibh This is Photoshop's version  of Lorem IpsuProin gravida nibh
+        li
+          time
+            | 27
+            span жов
+          .short-news-item
+            a(href="news_open.html") This is Photoshop's version  of Lorem IpsuProin gravida nibh
+            p This is Photoshop's version  of Lorem IpsuProin gravida nibh This is Photoshop's version  of Lorem IpsuProin gravida nibh
+    .month
+      h4 2014 вересень
+      ul
+        li
+          time
+            | 13
+            span вер
+          .short-news-item
+            a(href="news_open.html") This is Photoshop's version  of Lorem IpsuProin gravida nibh
+            p This is Photoshop's version  of Lorem IpsuProin gravida nibh This is Photoshop's version  of Lorem IpsuProin gravida nibh
+        li
+          time
+            | 21
+            span вер
+          .short-news-item
+            a(href="news_open.html") This is Photoshop's version  of Lorem IpsuProin gravida nibh
+            p This is Photoshop's version  of Lorem IpsuProin gravida nibh This is Photoshop's version  of Lorem IpsuProin gravida nibh
+        li
+          time
+            | 27
+            span вер
+          .short-news-item
+            a(href="news_open.html") This is Photoshop's version  of Lorem IpsuProin gravida nibh
+            p This is
+
+  section.contacts
+    .container
+      .email
+        span.icon
+        | warmif@gmail.com
+
+      .adress
+        span.icon
+        | м. Івано-Франківськ, вул. Тринітарська 11, офіс 9
+
+      .socials
+        a.twitter(href="https://twitter.com/WarmCityIF")
+          img(src="/assets/icon-twitter.png")
+        a.facebook(href="https://www.facebook.com/warmifua")
+          img(src="/assets/icon-facebook.png")
+
+  section.footer
+    span.made-in Made in Ivano-Frankivsk
+    span.warm-city Warm-city 2014
+    a.webmil(href='http://webmil.com.ua')
+      img(src="/assets/webmil-logo.png")

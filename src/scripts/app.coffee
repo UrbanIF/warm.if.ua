@@ -119,82 +119,87 @@ newPos = ( windowHeight, pos, adjuster, inertia) ->
   (((windowHeight + pos) + adjuster) * inertia) + "px"
 
 $ ->
-  $videoOverlay = $('.video-overlay')
-  $dialogOverlay = $('.dialog-overlay')
-  $supportButton = $('.support-button')
   $window = $(window)
   $element = $(".paralax")
   iframe = $('#player')[0]
-
   width = $('.filled').data('width')
   $('.filled').width(width)
 
-  $('li .content.white a').tooltipster(
+  $('li .content.white a, section.partners .list img').tooltipster(
     contentAsHTML: true
     theme: 'tooltipster-warm'
     interactive: true
   )
 
-  showOverlay = ($container)->
-    $container.addClass('visible')
-    $('html').addClass('with-overlay')
-  hideOverlay = ($container)->
-    $container.removeClass('visible')
-    $('html').removeClass('with-overlay')
+  if $element.length > 0
+    $('li .content.white a').on
+      'mouseenter': ->
+        img = $(@).find('img')
+        src = img.prop 'src'
+        img.prop 'src', img.data('hover')
+        img.data 'src', src
+      'mouseleave': ->
+        img = $(@).find('img')
+        $(@).find('img').prop 'src', img.data('src')
 
-  $('.how-it-works-link'). on 'click', (e)->
-    player = $f(iframe)
-    e.preventDefault()
-    showOverlay($videoOverlay)
-    player.api('play')
+    elementPos = $element.offset().top
 
-  $videoOverlay.on 'click', ->
-    player = $f(iframe)
-    player.api('pause')
-    hideOverlay($videoOverlay)
+    $window. on 'scroll', (e)->
+      windowHeight = $window.height()
 
-  $supportButton. on 'click', (e)->
-    e.preventDefault()
-    showOverlay($dialogOverlay)
+      pos = $window.scrollTop()
 
-  $('.dialog-overlay .close'). on 'click', ->
-    hideOverlay($dialogOverlay)
-
-  $('li .content.white a').on
-    'mouseenter': ->
-      img = $(@).find('img')
-      src = img.prop 'src'
-      img.prop 'src', img.data('hover')
-      img.data 'src', src
-    'mouseleave': ->
-      img = $(@).find('img')
-      $(@).find('img').prop 'src', img.data('src')
-
-  elementPos = $element.offset().top
-
-  $window. on 'scroll', (e)->
-    windowHeight = $window.height()
-
-    pos = $window.scrollTop()
-
-    if pos >= (elementPos-windowHeight)
-      $element.css visibility: 'visible'
-    else
-      $element.css visibility: 'hidden'
-    # console.log 'pos: '+ pos
-    # console.log 'elementPos: '+ elementPos
-    # console.log '(elementPos-windowHeight): ' + (elementPos-windowHeight)
-    $element.css
-      transform: "translateY(#{newPos( windowHeight, pos, -3600, 0.5)})"
+      if pos >= (elementPos-windowHeight)
+        $element.css visibility: 'visible'
+      else
+        $element.css visibility: 'hidden'
+      # console.log 'pos: '+ pos
+      # console.log 'elementPos: '+ elementPos
+      # console.log '(elementPos-windowHeight): ' + (elementPos-windowHeight)
+      $element.css
+        transform: "translateY(#{newPos( windowHeight, pos, -3600, 0.5)})"
 
   dialog = do ->
+    $videoOverlay = $('.video-overlay')
+    $dialogOverlay = $('.dialog-overlay')
+    $supportButton = $('.support-button')
+    $allSteps = $('.steps')
     $defaultStep = $('.step1')
     $humanStep = $('.step2')
     $companyStep = $('.step2c')
+    $successStep = $('.success-step')
     $backButton = $('.back')
+
     $currentStep = $defaultStep
 
     previousSteps = []
+
+    showOverlay = ($container)->
+      $container.addClass('visible')
+      $('html').addClass('with-overlay')
+    hideOverlay = ($container)->
+      $container.removeClass('visible')
+      $('html').removeClass('with-overlay')
+
+    $('.how-it-works-link'). on 'click', (e)->
+      player = $f(iframe)
+      e.preventDefault()
+      showOverlay($videoOverlay)
+      player.api('play')
+
+    $videoOverlay.on 'click', ->
+      player = $f(iframe)
+      player.api('pause')
+      hideOverlay($videoOverlay)
+
+    $supportButton. on 'click', (e)->
+      e.preventDefault()
+      showFirstStep()
+      showOverlay($dialogOverlay)
+
+    $('.dialog-overlay .close, .dialog-overlay .close-link'). on 'click', (e)->
+      e.preventDefault()
+      hideOverlay($dialogOverlay)
 
     checkBackButton = ->
       $backButton.show() if previousSteps.length > 0
@@ -215,16 +220,30 @@ $ ->
         checkBackButton()
         $currentStep = $previous
 
-    showHumanStep = ->
+    showSuccessStep = (e)->
+      e.preventDefault()
+      transitToStep($successStep)
+      previousSteps = []
+      checkBackButton()
+
+    showHumanStep = (e)->
+      e.preventDefault()
       transitToStep($humanStep)
 
-    showCompanyStep = ->
+    showCompanyStep = (e)->
+      e.preventDefault()
       transitToStep($companyStep)
+
+    showFirstStep = ->
+      $allSteps.hide()
+      $defaultStep.show()
+      $currentStep = $defaultStep
 
     checkBackButton()
     $('.step1 .as-human').on 'click', showHumanStep
-    $('.step1 .as-company').on 'click', showCompanyStep
+    $('.step1 .as-company').on 'click', showSuccessStep
     $('.back').on 'click', backStep
+
     $('.project'). on 'click', ->
       href = $(@).data('href')
       window.open(href) unless href is undefined
