@@ -125,7 +125,7 @@ $ ->
   width = $('.filled').data('width')
   $('.filled').width(width)
 
-  $('li .content.white a, section.partners .list img').tooltipster(
+  $('li .content.white a, section.partners .list img, span.help').tooltipster(
     contentAsHTML: true
     theme: 'tooltipster-warm'
     interactive: true
@@ -167,7 +167,10 @@ $ ->
     $defaultStep = $('.step1')
     $humanStep = $('.step2')
     $companyStep = $('.step2c')
+    $moneyStep = $('.money-help')
     $successStep = $('.success-step')
+    $businessFormStep = $('.form-business')
+    $peopleFormStep = $('.form-people')
     $backButton = $('.back')
 
     $currentStep = $defaultStep
@@ -234,14 +237,38 @@ $ ->
       e.preventDefault()
       transitToStep($companyStep)
 
+    showBusinessFormStep= (e)->
+      e.preventDefault()
+      transitToStep($businessFormStep)
+
+    showPeopleFormStep= (e)->
+      e.preventDefault()
+      transitToStep($peopleFormStep)
+
+    showMoneyStep= (e)->
+      e.preventDefault()
+      transitToStep($moneyStep)
+
     showFirstStep = ->
       $allSteps.hide()
       $defaultStep.show()
       $currentStep = $defaultStep
 
+    showOverlayWithForm= (e)->
+      showOverlay($dialogOverlay)
+      showBusinessFormStep(e)
+
     checkBackButton()
     $('.step1 .as-human').on 'click', showHumanStep
-    $('.step1 .as-company').on 'click', showSuccessStep
+    $('.step1 .as-company').on 'click', showCompanyStep
+    $('.step2c .become-business-partner').on 'click', showBusinessFormStep
+    $('.step2 .become-member').on 'click', showPeopleFormStep
+    $('form.business').on 'submit', showSuccessStep
+    $('form.people').on 'submit', showSuccessStep
+    $('.give-money').on 'click', showMoneyStep
+
+    $('.sign-as-company').on 'click', showOverlayWithForm
+
     $('.back').on 'click', backStep
 
     $('.project'). on 'click', ->
