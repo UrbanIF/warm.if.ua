@@ -1298,7 +1298,7 @@ section.faq {
     margin-top: em(40);
     @include span-columns(24);
     line-height: em(100);
-    img {
+    a {
       margin-right: em(57);
       height: em(110);
       width: em(110);
@@ -1336,6 +1336,11 @@ body.project {
     }
     &.urbanspace{background-image: url('/assets/projects/urbanspace-head.jpg');}
     &.city-brand{background-image: url('/assets/projects/city-brand-head.jpg');}
+    &.art{background-image: url('/assets/projects/art-head.jpg');}
+    &.bike{background-image: url('/assets/projects/bike-city-head.jpg');}
+    &.post-cards{background-image: url('/assets/projects/post-cards-head.jpg');}
+    &.child-space{background-image: url('/assets/projects/child-space-head.jpg');}
+    &.signs{background-image: url('/assets/projects/signs-head.jpg');}
   }
   .contacts {
     border-top: 1px solid #e6e6e6;
@@ -1370,6 +1375,20 @@ body.project {
         display:block;
         padding-top: em(50, 14);
       }
+    }
+    ul li {
+      color: #4a4a4a;
+      font-size: em(14);
+      font-weight: 400;
+      line-height: em(28, 14);
+    }
+    h5 {
+      color: #242424;
+      font-size: em(24);
+      font-weight: 700;
+      line-height: em(30, 24);
+      margin: em(30, 24) 0;
+      // text-transform: uppercase;
     }
     .center {
       text-align: center;
