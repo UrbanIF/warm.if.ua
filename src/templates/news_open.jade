@@ -3,28 +3,6 @@ block vars
   - var bodyClass = 'news'
 
 block content
-  header
-    a(href="/")
-      img.logo(src='/assets/logo.png')
-    nav
-      ul
-        //- li.title тепле місто
-        li
-          a(href="/#projects") Проекти
-        li
-          a(href="/#info") про нас
-        li
-          a(href="partners.html") партнери
-        li
-          a(href="publications.html") публікації
-        li
-          a(href="faq.html") faq
-    ul.languages
-      li
-        a(href="#") ua
-      li
-        a(href="#") en
-
   section.news-item
     .date
       time
@@ -36,24 +14,3 @@ block content
         img(src="/assets/news-item.png", alt="news-item")
       p This is Photoshop's version  olorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque.
       p Suspendisse in orci enim.This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
-  section.contacts
-    .container
-      .email
-        span.icon
-        | warmif@gmail.com
-
-      .adress
-        span.icon
-        | м. Івано-Франківськ, вул. Тринітарська 11, офіс 9
-
-      .socials
-        a.twitter(href="https://twitter.com/WarmCityIF")
-          img(src="/assets/icon-twitter.png")
-        a.facebook(href="https://www.facebook.com/warmifua")
-          img(src="/assets/icon-facebook.png")
-
-  section.footer
-    span.made-in Made in Ivano-Frankivsk
-    span.warm-city Warm-city 2014
-    a.webmil(href='http://webmil.com.ua')
-      img(src="/assets/webmil-logo.png")

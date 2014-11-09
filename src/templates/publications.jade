@@ -3,28 +3,6 @@ block vars
   - var bodyClass = 'publications'
 
 block content
-  header
-    a(href="/")
-      img.logo(src='/assets/logo.png')
-    nav
-      ul
-        //- li.title тепле місто
-        li
-          a(href="/#projects") Проекти
-        li
-          a(href="/#info") про нас
-        li
-          a(href="partners.html") партнери
-        li
-          a(href="publications.html") публікації
-        li
-          a(href="faq.html") faq
-    ul.languages
-      li
-        a(href="#") ua
-      li
-        a(href="#") en
-
   section.publications
     .month
       h4 2014 жовтень
@@ -80,25 +58,3 @@ block content
             a(href="http://news.if.ua") Назва статті про середовище “Тепле місто”, що є посиланням на першоджерело на інші ресурси
             p 
               a(href="http://news.if.ua") Назва першоджерела з посиланням на нього
-
-  section.contacts
-    .container
-      .email
-        span.icon
-        | warmif@gmail.com
-
-      .adress
-        span.icon
-        | м. Івано-Франківськ, вул. Тринітарська 11, офіс 9
-
-      .socials
-        a.twitter(href="https://twitter.com/WarmCityIF")
-          img(src="/assets/icon-twitter.png")
-        a.facebook(href="https://www.facebook.com/warmifua")
-          img(src="/assets/icon-facebook.png")
-
-  section.footer
-    span.made-in Made in Ivano-Frankivsk
-    span.warm-city Warm-city 2014
-    a.webmil(href='http://webmil.com.ua')
-      img(src="/assets/webmil-logo.png")

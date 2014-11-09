@@ -12,7 +12,48 @@ html(lang="en")
   - var bodyClass = '';
   block vars
   body(class='#{bodyClass}')
+    header
+      a(href="/")
+        img.logo(src='/assets/logo.png')
+      nav
+        ul
+          li
+            a(href="#projects") проекти
+          li
+            a(href="#info") про нас
+          li
+            a(href="partners.html") партнери
+          li
+            a(href="publications.html") публікації
+          li
+            a(href="faq.html") faq
+      ul.languages
+        li
+          a(href="#") ua
+        li
+          a(href="#") en
     block content
+    section.contacts
+      .container
+        .email
+          span.icon
+          | warmif@gmail.com
+
+        .adress
+          span.icon
+          | м. Івано-Франківськ, вул. Тринітарська 11, офіс 9
+
+        .socials
+          a.twitter(href="https://twitter.com/WarmCityIF")
+            img(src="/assets/icon-twitter.png")
+          a.facebook(href="https://www.facebook.com/warmifua")
+            img(src="/assets/icon-facebook.png")
+
+    section.footer
+      span.made-in Made in Ivano-Frankivsk
+      span.warm-city Warm-city 2014
+      a.webmil(href='http://webmil.com.ua')
+        img(src="/assets/webmil-logo.png")
     script(src="http://maps.googleapis.com/maps/api/js")
     script(src="http://code.jquery.com/jquery-git1.min.js")
     script(src="http://f.vimeocdn.com/js/froogaloop2.min.js")
