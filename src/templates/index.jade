@@ -13,6 +13,10 @@ block content
           a(href="#info") про нас
         li
           a(href="partners.html") партнери
+        li
+          a(href="publications.html") публікації
+        li
+          a(href="faq.html") faq
     ul.languages
       li
         a(href="#") ua
@@ -21,7 +25,7 @@ block content
   section.header-image
     h1 Середовище «Тепле Місто»
     h2 Об’єднує людей і бізнеси, які підтримують ідеї та дії щодо сталого розвитку Івано-Франківська
-    a.button.red.support-button(href="#") підтримати
+    a.button.red.support-button(href="#step1") підтримати
     h3 Топ-50 найпрогресивніших компаній міста
 
     ul.companies
@@ -125,7 +129,7 @@ block content
       li
       li
         .content.add
-          a.sign-as-company(href="#", title='приєднатися')
+          a.sign-as-company(href="#step2c", title='приєднатися')
             img(src="/assets/companies/add.png")
     .progress
       .desc 13/50
@@ -147,14 +151,14 @@ block content
       span 16
 
     .top-projects
-      .project.urban-space(data-href="http://www.urbanspace.if.ua")
+      .project.urban-space(data-href="projects/urbanspace.html")
         .info
           h3 «Urban Space 100»
           //- img(src='/assets/projects/grunvaldska-logo.png')
           p
             | Соціальне підприємство у форматі ресторану є успішним прикладом об’єднання громади навколо спільної ідеї. Прибуток ресторану направляється виключно на реалізацію громадських проектів міста.
 
-      .project.city-brand(data-href="http://www.city-brand.if.ua")
+      .project.city-brand(data-href="projects/citybrand.html")
         .info
           h3 Візуальний стиль міста
           //- img(src='/assets/projects/grunvaldska-logo.png')
@@ -249,29 +253,7 @@ block content
     //-         | Теплий туристичний посібник
 
 
-  //- section.map
-  //-   .title проекти та події на мапі
-  //-   #map-container
-  //-   ul.list
-  //-     li.all.active Всі
-  //-     li.item
-  //-       i
-  //-       | Арт
-  //-     li.item
-  //-       i
-  //-       | Реконструкція
-  //-     li.item
-  //-       i
-  //-       | Створення
-  //-     li.item
-  //-       i
-  //-       | Проведені події
-  //-     li.item
-  //-       i
-  //-       | Заплановані події
-  //-     li.item
-  //-       i
-  //-       | Незавершені
+
   section.mission
     img.paralax(src="/assets/photo2.jpg")
     .container
@@ -306,12 +288,34 @@ block content
         li створення простору для реалізації активної молоді
         li економічне зростання проектів, залучених в ТМ і міста в цілому
         li формування свого унікального стилю міста
-  section.video
-    .play-link-container
-      a.how-it-works-link(href="#")
-        img(src="/assets/play-button.png")
-        | Як це працює
-
+  //- section.video
+  //-   .play-link-container
+  //-     a.how-it-works-link(href="#")
+  //-       img(src="/assets/play-button.png")
+  //-       | Як це працює
+  section.map
+    .title проекти та події на мапі
+    #map-container
+    ul.list
+      li.all.active Всі
+      li.item
+        i
+        | Арт
+      li.item
+        i
+        | Реконструкція
+      li.item
+        i
+        | Створення
+      li.item
+        i
+        | Проведені події
+      li.item
+        i
+        | Заплановані події
+      li.item
+        i
+        | Незавершені
   section.news
     h2 новини
       span 18
@@ -361,7 +365,7 @@ block content
 
   .overlay.dialog-overlay.white
     .center
-      .steps.step1
+      .steps.step1#step1
         .title
           p Обирай форму допомоги нам
           .line
@@ -370,14 +374,14 @@ block content
           h5
             | прогресивна компанія
             span.help(title='"Тепле місто" об’єднує людей і бізнеси, які підтримують ідеї та дії щодо сталого розвитку Івано-Франківська. Якщо ваша компанія є саме такою, ми пропонуємо два варіанти співпраці: <ul><li>Стати бізнес-партнером</li><li>Надати одноразову допомогу</li></ul>')
-          a.dialog-button.as-company(href="") підтримати як організація
+          a.dialog-button.as-company(href="#step2c") підтримати як організація
         .right
           img.transformer(src="/assets/transformer.png", alt="transformer")
           h5
             | прогресивна людина
             span.help(title='Ви - небайдужа, сучасна, проактивна людина? Ви любите це місто і хочете, аби воно стало ще кращим? Оберіть, що вам ближче:<ul><li>Стати членом ГО "Тепле місто"</li><li>Надати доброчинну допомогу</li><li>Придбати продукцію у стилі Івано-Франківська</li></ul>')
-          a.dialog-button.as-human(href="") підтримати як людина
-      .steps.step2
+          a.dialog-button.as-human(href="#step2") підтримати як людина
+      .steps.step2#step2
         .title
           p допомоги нам як людина
           .line
@@ -387,19 +391,19 @@ block content
             | Фондуй
             span.help(title='Ви поділяєте наші цінності і прагнете зробити Франківськ прогресивним сучасним містом? Тоді пропонуємо вам надати підтримку "Теплому місту", зробивши доброчинний внесок у зручний для вас спосіб. Ця можливість відкрита як для окремих людей, так і для цілих організацій. <ul> <li>Онлайн-платіж з банківської картки (coming soon)</li> <li>Переказ на розрахунковий рахунок</li></ul>')
           p Ви поділяєте наші цінності і прагнете зробити Франківськ прогресивним сучасним містом? Тоді пропонуємо вам надати підтримку "Теплому місту", зробивши доброчинний внесок у зручний для вас спосіб
-          a.dialog-button.give-money(href="") допомогти матеріально
+          a.dialog-button.give-money(href="#money-help") допомогти матеріально
         .block.second.member
           img.super(src="/assets/super.png", alt="super")
           h5
             | Стань учасником
             span.help(title='Долучайтесь до "Теплого міста", вступивши в громадську організацію. Отримайте можливість впливати на діяльність організації, пропонувати свої проекти, брати участь в загальних зборах, і відчувати особисту приналежність до прогресивних змін у нашому місті та Україні.<br/>Для членства в ГО "Тепле місто":<ul><li>Заповніть анкету, паперову або електронну</li><li>Сплатіть річний членський внесок в сумі 120 грн.</li></ul>Після цього ми підтвердимо ваше членство в ГО "Тепле місто" і розповімо про подальші події та можливості.')
           p Долучайтесь до "Теплого міста". вступивши в громадську організацію. Отримайте можливість впливати на діяльність організації, пропонувати свої проекти, брати участь в загальних зборах
-          a.dialog-button.become-member(href="") долучитись
+          a.dialog-button.become-member(href="#form-people") долучитись
         .block.last.online-store.disabled
           h5 online store
           p Придбати продукцію у стилі Івано-Франківська
           a.dialog-button(href="") coming soon
-      .steps.step2c
+      .steps.step2c#step2c
         .title
           p допомоги нам як компанія
           .line
@@ -409,21 +413,21 @@ block content
             | Стати бізнес партнером
             span.help(title='Підтримуючи прогресивний розвиток Івано-Франківська як бізнес-партнер, ви отримуєте:<ul><li>Участь в "ТОП-50 прогресивних  компаній Івано-Франківська" (кількість місць обмежена)</li> <li>Висвітлення на інформаційних ресурсах "Теплого міста"</li> <li>Присутність логотипу компанії в прес-релізах і на прес-конференціях, періодичне висвітлення в ЗМІ та на промо-матеріалах</li> <li>Запрошення на події, що організовує "Тепле місто"</li> <li>Щомісячний  звіт про діяльність "Теплого міста" </li> <li>Запрошення на щорічні урочисті збори "Теплого міста" </li> </ul>')
           p Бізнес-партнер — це компанія, що системно сприяє "Теплому місту", здійснюючи фінансову підтримку, або пакет професійних послуг.
-          a.dialog-button.become-business-partner(href="") долучитись
+          a.dialog-button.become-business-partner(href="#form-business") долучитись
         .block.second.mnh
           img.super(src="/assets/super.png", alt="super")
           h5
             | Надати доброчинну допомогу
             span.help(title='Ви поділяєте наші цінності і прагнете зробити Франківськ прогресивним сучасним містом? Тоді пропонуємо вам надати підтримку "Теплому місту", зробивши доброчинний внесок у зручний для вас спосіб. Ця можливість відкрита як для окремих людей, так і для цілих організацій. <ul> <li>Онлайн-платіж з банківської картки (coming soon)</li> <li>Переказ на розрахунковий рахунок</li></ul>')
           p Пропонуємо вам надати підтримку "Теплому місту", зробивши доброчинний внесок у зручний для вас спосіб.
-          a.dialog-button.give-money(href="") допомогти матеріально
+          a.dialog-button.give-money(href="#money-help") допомогти матеріально
 
-      .steps.success-step
+      .steps.success-step#success-step
           img.success(src="/assets/success.png", alt="success")
           h5 Дякуємо! Вашу заявку прийнято
           p очікуйте лист відповідь на пошту
           a.close-link(href="#") закрити
-      .steps.form-business
+      .steps.form-business#form-business
         .title
           p Стати бізнес-партнером
           .line
@@ -439,7 +443,7 @@ block content
             img(src="/assets/required.png", alt="required")
             | &mdash; поля обов’язкові для заповнення
           input.dialog-button.submit(type="submit", value="відправити")
-      .steps.form-people
+      .steps.form-people#form-people
         .title
           p Стати членом ГО "Тепле місто"
           .line
@@ -455,7 +459,7 @@ block content
             img(src="/assets/required.png", alt="required")
             | &mdash; поля обов’язкові для заповнення
           input.dialog-button.submit(type="submit", value="відправити")
-      .steps.money-help
+      .steps.money-help#money-help
         .title
           p Надати доброчинну допомогу
           .line

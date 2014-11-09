@@ -2,117 +2,117 @@ logger = require('./logger/logger')
 
 logger('hello browserify!!')
 
-# $listContainer = $('.map ul.list')
-# groups = [
-#   {
-#     title: 'Арт',
-#     color: '#ff2f13',
-#     markers: [{
-#       icon: 'assets/markers/icon1.png',
-#       title: 'marker1',
-#       address: 'вул. Л.Курбаса 5, Івано-Франківськ',
-#       coords: {
-#         lat: 48.92143799999999,
-#         lng: 24.712647400000037
-#       }
-#     }]
-#   },
-#   {
-#     title: 'Проведені події',
-#     color: '#aaaf13',
-#     markers: [{
-#       icon: 'assets/markers/icon4.png',
-#       title: 'marker1',
-#       address: 'вул. Галицька 65, Івано-Франківськ',
-#       coords: {
-#         lat: 48.9287565,
-#         lng: 24.7092137
-#       }
-#       },{
-#       icon: 'assets/markers/icon4.png',
-#       title: 'marker1',
-#       address: 'вул. Коновальця 25, Івано-Франківськ',
-#       coords: {
-#         lat: 48.9170916,
-#         lng: 24.711238
-#       },
-#     }]
-#   },
-#   {
-#     title: 'Реконструкція',
-#     color: '#002f13',
-#     markers: [{
-#       icon: 'assets/markers/icon3.png',
-#       title: 'marker1',
-#       address: 'вул. Незалежносні 12, Івано-Франківськ',
-#       coords: {
-#         lat: 48.9199346,
-#         lng: 24.709554600000047
-#       }
-#     }]
-#   }
-#   ]
-# placeMarkers = (markerGroups, map)->
-#   geocoder = new google.maps.Geocoder()
-#   for group in markerGroups
-#     group.markerObjs = []
-#     for marker in group.markers
-#       marker = new google.maps.Marker(
-#         map: map
-#         position: marker.coords
-#         icon: marker.icon
-#       )
-#       group.markerObjs.push(marker)
-#
-# showAllMarkers = (markerGroups, show=true )->
-#   for group in markerGroups
-#     for marker in group.markerObjs
-#       marker.setVisible(show)
-#
-# buildList = (markerGroups)->
-#   $listContainer.find('.item').remove()
-#   for group, n in markerGroups
-#     li = $('<li>').addClass('item')
-#     li.text(group.title)
-#     li.prepend($('<i>').css('background', group.color))
-#     li.data('group', n)
-#     $listContainer.append(li)
-#
-# showGroup = (groups, groupId)->
-#   for marker in groups[groupId].markerObjs
-#     marker.setVisible(true)
-#
-# groupSelectedEvent = (e)->
-#   item = $(e.target)
-#   $listContainer.find('li').removeClass('active')
-#   item.addClass('active')
-#   showAllMarkers(groups, false)
-#   showGroup(groups, item.data('group'))
-#
-# showAllSelectedEvent = (e)->
-#   item = $(e.target)
-#   $listContainer.find('li').removeClass('active')
-#   item.addClass('active')
-#   showAllMarkers(groups, true)
-#
-# initEvents = ->
-#   $listContainer.on 'click', 'li.item', groupSelectedEvent
-#   $listContainer.on 'click', 'li.all', showAllSelectedEvent
-#
-# initialize = ->
-#   mapCanvas = document.getElementById("map-container")
-#   mapOptions =
-#     center: new google.maps.LatLng(48.92143799999999, 24.712647400000037)
-#     zoom: 14
-#     scrollwheel: false
-#     mapTypeId: google.maps.MapTypeId.ROADMAP
-#     disableDefaultUI: true
-#   map = new google.maps.Map(mapCanvas, mapOptions)
-#   buildList(groups)
-#   placeMarkers(groups, map)
-#   initEvents()
-#
-# google.maps.event.addDomListener window, "load", initialize
+$listContainer = $('.map ul.list')
+groups = [
+  {
+    title: 'Арт',
+    color: '#ff2f13',
+    markers: [{
+      icon: 'assets/markers/icon1.png',
+      title: 'marker1',
+      address: 'вул. Л.Курбаса 5, Івано-Франківськ',
+      coords: {
+        lat: 48.92143799999999,
+        lng: 24.712647400000037
+      }
+    }]
+  },
+  {
+    title: 'Проведені події',
+    color: '#aaaf13',
+    markers: [{
+      icon: 'assets/markers/icon4.png',
+      title: 'marker1',
+      address: 'вул. Галицька 65, Івано-Франківськ',
+      coords: {
+        lat: 48.9287565,
+        lng: 24.7092137
+      }
+      },{
+      icon: 'assets/markers/icon4.png',
+      title: 'marker1',
+      address: 'вул. Коновальця 25, Івано-Франківськ',
+      coords: {
+        lat: 48.9170916,
+        lng: 24.711238
+      },
+    }]
+  },
+  {
+    title: 'Реконструкція',
+    color: '#002f13',
+    markers: [{
+      icon: 'assets/markers/icon3.png',
+      title: 'marker1',
+      address: 'вул. Незалежносні 12, Івано-Франківськ',
+      coords: {
+        lat: 48.9199346,
+        lng: 24.709554600000047
+      }
+    }]
+  }
+  ]
+placeMarkers = (markerGroups, map)->
+  geocoder = new google.maps.Geocoder()
+  for group in markerGroups
+    group.markerObjs = []
+    for marker in group.markers
+      marker = new google.maps.Marker(
+        map: map
+        position: marker.coords
+        icon: marker.icon
+      )
+      group.markerObjs.push(marker)
+
+showAllMarkers = (markerGroups, show=true )->
+  for group in markerGroups
+    for marker in group.markerObjs
+      marker.setVisible(show)
+
+buildList = (markerGroups)->
+  $listContainer.find('.item').remove()
+  for group, n in markerGroups
+    li = $('<li>').addClass('item')
+    li.text(group.title)
+    li.prepend($('<i>').css('background', group.color))
+    li.data('group', n)
+    $listContainer.append(li)
+
+showGroup = (groups, groupId)->
+  for marker in groups[groupId].markerObjs
+    marker.setVisible(true)
+
+groupSelectedEvent = (e)->
+  item = $(e.target)
+  $listContainer.find('li').removeClass('active')
+  item.addClass('active')
+  showAllMarkers(groups, false)
+  showGroup(groups, item.data('group'))
+
+showAllSelectedEvent = (e)->
+  item = $(e.target)
+  $listContainer.find('li').removeClass('active')
+  item.addClass('active')
+  showAllMarkers(groups, true)
+
+initEvents = ->
+  $listContainer.on 'click', 'li.item', groupSelectedEvent
+  $listContainer.on 'click', 'li.all', showAllSelectedEvent
+
+initialize = ->
+  mapCanvas = document.getElementById("map-container")
+  mapOptions =
+    center: new google.maps.LatLng(48.92143799999999, 24.712647400000037)
+    zoom: 14
+    scrollwheel: false
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+    disableDefaultUI: true
+  map = new google.maps.Map(mapCanvas, mapOptions)
+  buildList(groups)
+  placeMarkers(groups, map)
+  initEvents()
+
+google.maps.event.addDomListener window, "load", initialize
 
 
 newPos = ( windowHeight, pos, adjuster, inertia) ->
@@ -197,8 +197,11 @@ $ ->
 
     $supportButton. on 'click', (e)->
       e.preventDefault()
-      showFirstStep()
-      showOverlay($dialogOverlay)
+      console.log $(@).prop('href')
+      location.href = $(@).prop('href')
+      # showFirstStep()
+      # showOverlay($dialogOverlay)
+
 
     $('.dialog-overlay .close, .dialog-overlay .close-link'). on 'click', (e)->
       e.preventDefault()
@@ -206,9 +209,11 @@ $ ->
 
     checkBackButton = ->
       $backButton.show() if previousSteps.length > 0
-      $backButton.hide() if previousSteps.length is 0
+      $backButton.hide() if previousSteps.length is 0 or location.hash is '#step1'
 
     transitToStep = ($nextStep) ->
+      console.log $('.dialog-overlay').css('opacity') is '0'
+      showOverlay($dialogOverlay) if $('.dialog-overlay').css('opacity') is '0'
       $currentStep.fadeOut 'fast', ->
         $nextStep.fadeIn 'fast'
       previousSteps.push $currentStep
@@ -218,10 +223,12 @@ $ ->
     backStep = ->
       $previous = previousSteps.pop()
       if $previous
-        $currentStep.fadeOut 'fast', ->
-          $previous.fadeIn 'fast'
+        # $currentStep.fadeOut 'fast', ->
+        #   $previous.fadeIn 'fast'
+        window.history.back()
         checkBackButton()
-        $currentStep = $previous
+        # $currentStep = $previous
+
 
     showSuccessStep = (e)->
       e.preventDefault()
@@ -255,17 +262,22 @@ $ ->
       $currentStep = $defaultStep
 
     showOverlayWithForm= (e)->
+      previousSteps = []
+      e.preventDefault()
+      location.hash = 'step2c'
+
       showOverlay($dialogOverlay)
-      showBusinessFormStep(e)
+      showCompanyStep(e)
+
 
     checkBackButton()
-    $('.step1 .as-human').on 'click', showHumanStep
-    $('.step1 .as-company').on 'click', showCompanyStep
-    $('.step2c .become-business-partner').on 'click', showBusinessFormStep
-    $('.step2 .become-member').on 'click', showPeopleFormStep
-    $('form.business').on 'submit', showSuccessStep
-    $('form.people').on 'submit', showSuccessStep
-    $('.give-money').on 'click', showMoneyStep
+    # $('.step1 .as-human').on 'click', showHumanStep
+    # $('.step1 .as-company').on 'click', showCompanyStep
+    # $('.step2c .become-business-partner').on 'click', showBusinessFormStep
+    # $('.step2 .become-member').on 'click', showPeopleFormStep
+    # $('form.business').on 'submit', showSuccessStep
+    # $('form.people').on 'submit', showSuccessStep
+    # $('.give-money').on 'click', showMoneyStep
 
     $('.sign-as-company').on 'click', showOverlayWithForm
 
@@ -274,6 +286,24 @@ $ ->
     $('.project'). on 'click', ->
       href = $(@).data('href')
       window.open(href) unless href is undefined
+    skipSteps = ['#projects','#info', '']
 
+    initHashchangeEvent = (->
+      $(window).on 'hashchange', (e)->
 
-  # pos-scrolled
+        if location.hash not in skipSteps
+          console.log 'hash changed'
+          transitToStep($(location.hash))
+        else
+          hideOverlay($dialogOverlay)
+    )()
+
+    preloadImages = (->
+      $('.companies a img').each ->
+        ob = $(@)
+        if ob.data('hover')
+          i =  new Image()
+          i.src = ob.data('hover')
+    )()
+
+    $("section a[href^='http://']").attr("target","_blank");
