@@ -5,3 +5,4 @@ dist
 bower_components
 Desktop.ini
 node_modules
+.idea
