@@ -146,6 +146,7 @@ header{
     bottom: 0;
     background: url('/assets/triangle.png') no-repeat center center;
     background-size: cover;
+    z-index: 5;
   }
 
   .socials {
@@ -169,6 +170,68 @@ header{
     }
   }
 }
+
+.rating-link {
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+    .rating-overlay {
+      display: block;
+    }
+  }
+}
+
+.rating-overlay {
+  font-size: medium;
+
+  position: absolute;
+  top: em(312);
+  width: 100%;
+  height: em(498);
+  background: #fff;
+  z-index: 2;
+  display: none;
+}
+
+.rating-overlay:after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 35%;
+  margin-left: -12px;
+  width: 0; height: 0;
+  border-bottom: 12px solid #fff;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+}
+
+  .rating-overlay__text {
+    color: #242424;
+    width: em(810);
+    margin: auto;
+    text-align: center;
+    text-transform: none;
+  }
+    .rating-overlay__first {
+      font-size: em(18);
+      line-height: 1.2;
+      font-weight: 700;
+      margin: em(110) 0 em(46);
+    }
+    .rating-overlay__second {
+      font-size: em(18);
+      line-height: 1.2;
+      font-weight: 400;
+      margin-bottom: em(46);
+    }
+    .rating-overlay__third {
+      font-size: em(14);
+      line-height: 1.4;
+      font-weight: 400;
+    }
+
 
 ul.companies {
   list-style-type: none;
@@ -1061,7 +1124,7 @@ html.with-overlay {
 }
 
 .progress {
-  z-index: 999;
+//  z-index: 999;
   width: em(941);
   margin: em(7) auto 0;
   position: relative;

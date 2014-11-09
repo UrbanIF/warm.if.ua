@@ -6,9 +6,8 @@ block content
       img.logo(src='/assets/logo.png')
     nav
       ul
-        //- li.title тепле місто
         li
-          a(href="#projects") Проекти
+          a(href="#projects") проекти
         li
           a(href="#info") про нас
         li
@@ -26,7 +25,24 @@ block content
     h1 Середовище «Тепле Місто»
     h2 Об’єднує людей і бізнеси, які підтримують ідеї та дії щодо сталого розвитку Івано-Франківська
     a.button.red.support-button(href="#step1") підтримати
-    h3 Топ-50 найпрогресивніших компаній міста
+    h3
+      span.rating-link
+        | Рейтинг
+
+        .rating-overlay
+          .rating-overlay__text
+            p.rating-overlay__first.
+              Сьогодні ініціативи «Теплого Міста» визнані одними із найбільш дієвих і прогресивних в України.
+            p.rating-overlay__second.
+              Про проекти середовища пишуть і говорять такі відомі видання і ресурси, як Inspired,
+              UA&nbsp;Modna, Big&nbsp;Idea, Платформа, Українська&nbsp;правда, ТРК&nbsp;Україна.
+            p.rating-overlay__third.
+              Бізнеси, які підтримують дані ідеї і дії, безперечно, можна також вважати прогресивними.
+              Таким чином, ми формуємо Рейтинг 50 найпрогресивніших компаній міста.
+              В нашому рейтингу немає перших чи других: ми об’єднуємо соціально-відповідальні компанії,
+              які прагнуть розвивати своє місто
+
+      |  Топ-50 найпрогресивніших компаній міста
 
     ul.companies
       li
@@ -151,107 +167,54 @@ block content
       span 16
 
     .top-projects
-      .project.urban-space(data-href="projects/urbanspace.html")
+      a.project.urban-space(href="projects/urbanspace.html")
         .info
           h3 «Urban Space 100»
-          //- img(src='/assets/projects/grunvaldska-logo.png')
           p
             | Соціальне підприємство у форматі ресторану є успішним прикладом об’єднання громади навколо спільної ідеї. Прибуток ресторану направляється виключно на реалізацію громадських проектів міста.
 
-      .project.city-brand(data-href="projects/citybrand.html")
+      a.project.city-brand(href="projects/citybrand.html")
         .info
           h3 Візуальний стиль міста
-          //- img(src='/assets/projects/grunvaldska-logo.png')
           p
             | В 2014 році в було представлено новий стиль міста. Івано-Франківськ отримав логотип, правила щодо розміщення вуличної навігації і впорядкування зовнішньої реклами на фасадах будинків. Логотип став фіналістом Фестивалю «Каннські леви»
 
-      .project.grunvaldska(data-href="assets/images/gr_presentation.pdf")
+      a.project.grunvaldska(href="assets/images/gr_presentation.pdf")
         .info
           h3 проект «Грюнвальдська»
-          //- img(src='/assets/projects/grunvaldska-logo.png')
           p
             | Проект перетворення Грюнвальдської на найкращу вулицю в Європі та модель «нового Івано-Франківська» як ідеального міста в межах локальної території.
 
 
-      .project.bike-city(data-href="https://www.facebook.com/bikeIF")
+      a.project.bike-city(href="https://www.facebook.com/bikeIF")
         .info
           h3 Тепле веломісто
-          //- img(src='/assets/projects/grunvaldska-logo.png')
           p
             | Просування велосипедів, як найбільш раціонального і прогресивного транспорту у межах міста. Ми бачимо Івано-Франківськ, як найбільш велосипедне місто Східної Європи, в якому 41% усіх поїздок громада робить на велосипедах.
 
-      .project.post-cards(data-href="https://www.facebook.com/warmcards")
+      a.project.post-cards(href="https://www.facebook.com/warmcards")
         .info
           h3 Теплі Поштівки
-          //- img(src='/assets/projects/grunvaldska-logo.png')
           p
             | Творчо-промоційна ініціатива зі створення та розповсюдження сучасних і привабливих поштівок про Івано-Франківськ.
 
-      .project.signs
+      a.project.signs
         .info
           h3 Вивіски
-          //- img(src='/assets/projects/grunvaldska-logo.png')
           p
             //- | Творчо-промоційна ініціатива зі створення та розповсюдження сучасних і привабливих поштівок про Івано-Франківськ.
 
-      .project.child-space(data-href="https://www.facebook.com/childfriendlypublicspace")
+      a.project.child-space(href="https://www.facebook.com/childfriendlypublicspace")
         .info
           h3 Дитячий міський простір
-          //- img(src='/assets/projects/grunvaldska-logo.png')
           p
             | Проведення міжнародного архітектурного конкурсу на проект створення дружніх до дітей громадських просторів (спільно з ГО «Мами Прикарпаття» та Департаментом містобудування та архітектури).
 
-      .project.art(data-href="art.html")
+      a.project.art(href="art.html")
         .info
           h3 Теплий Арт
-          //- img(src='/assets/projects/grunvaldska-logo.png')
           p
             | концепція традиційних європейських практик розвитку мистецького середовища. Мета Теплого Арту – доповнити культурний ландшафт і вплинути на загальну статику мистецького середовища Івано-Франківська
-
-    //- .other-projects
-    //-   .project.p1
-    //-     .info
-    //-       h3
-    //-         | проект
-    //-         br
-    //-         | «Вивіски»
-    //-   .project.p2
-    //-     .info
-    //-       h3
-    //-         | проект
-    //-         br
-    //-         | «Теплий Арт»
-    //-   .project.p3
-    //-     .info
-    //-         h3
-    //-           | Дитячий міський простір
-    //-   .project.p4
-    //-     .info
-    //-       h3
-    //-         | проект
-    //-         br
-    //-         | «Теплі поштівки»
-    //-   .project.p5
-    //-     .info
-    //-       h3
-    //-         | Тепле IT-середовище
-    //-   .project.p6
-    //-     .info
-    //-       h3
-    //-         | Тепла Освіта
-    //-   .project.p7
-    //-     .info
-    //-       h3
-    //-         | Теплі фестивалі
-    //-   .project.p8
-    //-     .info
-    //-       h3
-    //-         | Теплі заклади
-    //-   .project.p9
-    //-     .info
-    //-       h3
-    //-         | Теплий туристичний посібник
-
 
 
   section.mission
