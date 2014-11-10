@@ -20,7 +20,7 @@ $ ->
   $('.filled').width(width)
 
 
-  $('li .content.white a, section.partners .list img, span.help').tooltipster(
+  $('li .content.white a, span.help').tooltipster(
     contentAsHTML: true
     theme: 'tooltipster-warm'
     interactive: true

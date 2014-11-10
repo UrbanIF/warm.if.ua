@@ -3,49 +3,153 @@ module.exports = (x)->
   $listContainer = $('.map ul.list')
   groups = [
     {
-      title: 'Арт',
+      title: 'Магазини',
       color: '#ff2f13',
       markers: [{
         icon: 'assets/markers/icon1.png',
-        title: 'marker1',
-        address: 'вул. Л.Курбаса 5, Івано-Франківськ',
+        title: 'Говорить Івано-Франківськ',
+        address: 'пл. Ринок, 8, Івано-Франківськ',
         coords: {
-          lat: 48.92143799999999,
-          lng: 24.712647400000037
-        }
-      }]
-    },
-    {
-      title: 'Проведені події',
-      color: '#aaaf13',
-      markers: [{
-        icon: 'assets/markers/icon4.png',
-        title: 'marker1',
-        address: 'вул. Галицька 65, Івано-Франківськ',
-        coords: {
-          lat: 48.9287565,
-          lng: 24.7092137
+          lat: 48.92191,
+          lng: 24.71005
         }
       },{
-        icon: 'assets/markers/icon4.png',
-        title: 'marker1',
-        address: 'вул. Коновальця 25, Івано-Франківськ',
+        icon: 'assets/markers/icon1.png',
+        title: 'Мануфактура',
+        address: 'пл. Міцкевича, 6, Івано-Франківськ',
         coords: {
-          lat: 48.9170916,
-          lng: 24.711238
-        },
+          lat: 	48.920961,
+          lng: 	24.711749999999938
+        }
+      },{
+        icon: 'assets/markers/icon1.png',
+        title: 'Сувенірний штаб',
+        address: 'вул. Незалежності, 18/2, Івано-Франківськ',
+        coords: {
+          lat: 	48.91905,
+          lng: 	24.71247500000004
+        }
+      },{
+        icon: 'assets/markers/icon1.png',
+        title: 'Fabbrica',
+        address: 'вул. Вірменська, 1, Івано-Франківськ',
+        coords: {
+          lat: 	48.922224,
+          lng: 	24.711207999999942
+        }
+      },{
+        icon: 'assets/markers/icon1.png',
+        title: 'Аватар',
+        address: 'вул. Мельника, 2, Івано-Франківськ',
+        coords: {
+          lat: 	48.91871339999999,
+          lng: 	24.714699999999993
+        }
+      },{
+        icon: 'assets/markers/icon1.png',
+        title: 'Оле-Тур',
+        address: 'вул. Січових Стрільців, 19, Івано-Франківськ',
+        coords: {
+          lat: 	48.919142,
+          lng: 	24.709946299999956
+        }
+      },{
+        icon: 'assets/markers/icon1.png',
+        title: 'Ейнштейн',
+        address: 'пл. Ринок, 1, Івано-Франківськ',
+        coords: {
+          lat: 	48.9232953,
+          lng: 	24.71026900000004
+        }
+      },{
+        icon: 'assets/markers/icon1.png',
+        title: 'Дон Педро',
+        address: 'вул. І.Франка, 27, Івано-Франківськ',
+        coords: {
+          lat: 	48.92286319999999,
+          lng: 		24.71660129999998
+        }
+      },{
+        icon: 'assets/markers/icon1.png',
+        title: 'Chicken Hut',
+        address: 'вул. Бельведерська, 21А, Івано-Франківськ',
+        coords: {
+          lat: 	48.9227353,
+          lng: 	24.704589599999963
+        }
+      },{
+        icon: 'assets/markers/icon1.png',
+        title: 'Ваш партнер',
+        address: 'вул. Грушевського, 1, Івано-Франківськ',
+        coords: {
+          lat: 	48.92066699999999,
+          lng: 	24.71003500000006
+        }
+      },{
+        icon: 'assets/markers/icon1.png',
+        title: 'Магазин "Для тебе"',
+        address: 'вул. Незалежності, 40, Івано-Франківськ',
+        coords: {
+          lat: 	48.91767530000001,
+          lng: 	24.717138100000057
+        }
+      },{
+        icon: 'assets/markers/icon1.png',
+        title: 'Гриль-ресторан "Вулик"',
+        address: 'вул. Пасічна, 43, Івано-Франківськ',
+        coords: {
+          lat: 	48.9380743,
+          lng: 	24.693299199999956
+        }
+      },{
+        icon: 'assets/markers/icon1.png',
+        title: 'Плюс',
+        address: 'вул. Тролейбусна, 1, Івано-Франківськ',
+        coords: {
+          lat: 	48.944353,
+          lng: 	24.69907569999998
+        }
+      },{
+        icon: 'assets/markers/icon1.png',
+        title: 'Плюс',
+        address: 'вул. Симоненка, 15, Івано-Франківськ',
+        coords: {
+          lat: 	48.9400922,
+          lng: 	24.747392999999988
+        }
+      },{
+        icon: 'assets/markers/icon1.png',
+        title: '12 персон',
+        address: 'Бастіон, Фортечний провулок, 1, Івано-Франківськ',
+        coords: {
+          lat: 	48.9225222,
+          lng: 	24.707551800000033
+        }
       }]
     },
     {
-      title: 'Реконструкція',
+      title: 'Офіс "Тепле місто"',
+      color: '#aaaf13',
+      markers: [{
+        icon: 'assets/markers/office.png',
+        title: 'marker1',
+        address: 'вул. Тринітарська 11, офіс 9, Івано-Франківськ',
+        coords: {
+          lat: 48.9236908,
+          lng: 	24.71116189999998
+        }
+      }]
+    },
+    {
+      title: 'UrbanSpace 100',
       color: '#002f13',
       markers: [{
-        icon: 'assets/markers/icon3.png',
-        title: 'marker1',
-        address: 'вул. Незалежносні 12, Івано-Франківськ',
+        icon: 'assets/markers/urban.png',
+        title: 'UrbanSpace 100',
+        address: 'вул. Грушевського, 19, Івано-Франківськ',
         coords: {
-          lat: 48.9199346,
-          lng: 24.709554600000047
+          lat: 48.9213233,
+          lng: 24.713921099999993
         }
       }]
     }
