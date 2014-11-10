@@ -24,6 +24,7 @@ module.exports = (x)->
   hideOverlay = ($container)->
     $container.removeClass('visible')
     $('html').removeClass('with-overlay')
+    location.hash = ''
 
   $('.how-it-works-link'). on 'click', (e)->
     player = $f(iframe)
@@ -128,7 +129,6 @@ module.exports = (x)->
 
   initHashchangeEvent = (->
     $(window).on 'hashchange', (e)->
-
       if location.hash not in skipSteps
         console.log 'hash changed'
         transitToStep($(location.hash))
@@ -143,4 +143,3 @@ module.exports = (x)->
         i =  new Image()
         i.src = ob.data('hover')
   )()
-
