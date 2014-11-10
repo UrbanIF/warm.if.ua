@@ -63,7 +63,7 @@ header{
   nav {
     padding: em(40) 0 0 em(5);
     margin-left: em(103);
-    width: em(500);
+    width: em(520);
     li {
       float: left;
       font-size: em(14);
@@ -100,7 +100,7 @@ header{
 
 .header-image {
   background: url('/assets/photo.jpg') no-repeat center center;
-  background-size: cover;
+
   position: relative;
   height: em(810);
   width: 100%;
@@ -182,9 +182,9 @@ header{
   &:hover {
     text-decoration: none;
     .rating-overlay {
-//      opacity: 1;
-//      visibility: visible;
-      display: block;
+     opacity: 1;
+     visibility: visible;
+      // display: block;
     }
   }
 }
@@ -200,10 +200,10 @@ header{
   background: #fff;
   z-index: 2;
 
-//  opacity: 0;
-//  transition: all 0.5s;
-//  visibility: hidden;
-  display: none;
+ opacity: 0;
+ transition: all 0.5s;
+ visibility: hidden;
+  // display: none;
 }
 
 .rating-overlay:after {
@@ -387,12 +387,15 @@ section.projects {
   }
 
   .other-projects {
-    margin-top: em(10);
+    // margin-top: em(10);
     width: 100%;
     min-width: $min-container;
     line-height: 0;
-
+    .post-cards { background-image: url('/assets/projects/post-cards-small.jpg'); }
+    .other { background-image: url('/assets/projects/other-projects.jpg'); }
+    .signs { background-image: url('/assets/projects/signs.jpg'); }
     .project {
+      text-decoration: none;
       width: em(237);
       height: em(240);
       position: relative;
@@ -760,11 +763,16 @@ section.news {
     position: relative;
     height: em(360);
     overflow: hidden;
-    h4 {
+    h4 a {
       color: #2c2c2c;
       font-size: em(18);
       font-weight: 700;
       line-height: em(22);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
     p {
       color: #2c2c2c;
@@ -1331,6 +1339,7 @@ body.project {
   background: #fff;
   .header-image {
     height: em(300);
+    background-size: cover;
     h2 {
       font-size: em(24);
       padding-top: em(134, 24);

@@ -1,11 +1,12 @@
 extends layout/default
-
+block vars
+  - var title = 'Тепле Місто'
 block content
   include partials/header-grid
 
   section.projects#projects
     h2 проекти
-      span 8
+      span 10
 
     .top-projects
       a.project.urban-space(href="/projects/urbanspace.html")
@@ -33,17 +34,17 @@ block content
           p
             | Просування велосипедів як найбільш раціонального та екологічного міського транспорту.
 
-      a.project.post-cards(href="/projects/post-cards.html")
-        .info
-          h3 Теплі Поштівки
-          p
-            | Творчо-промоційна ініціатива зі створення та розповсюдження сучасних і привабливих поштівок про Івано-Франківськ.
-
-      a.project.signs(href="/projects/signs.html")
-        .info
-          h3 Вивіски
-          p
-            | Створення візуально привабливих вивісок зі збереженням естетики середовища та врахуванням архітектурних особливостей будівель.
+      //- a.project.post-cards(href="/projects/post-cards.html")
+      //-   .info
+      //-     h3 Теплі Поштівки
+      //-     p
+      //-       | Творчо-промоційна ініціатива зі створення та розповсюдження сучасних і привабливих поштівок про Івано-Франківськ.
+      //- 
+      //- a.project.signs(href="/projects/signs.html")
+      //-   .info
+      //-     h3 Вивіски
+      //-     p
+      //-       | Створення візуально привабливих вивісок зі збереженням естетики середовища та врахуванням архітектурних особливостей будівель.
 
       a.project.child-space(href="/projects/childfriendlypublicspace.html")
         .info
@@ -56,8 +57,20 @@ block content
           h3 Теплий Арт
           p
             | Концепція традиційних європейських практик розвитку мистецького середовища. Теплий Арт — це доповнення культурного ландшафту і створення локального майданчику для творчої діяльності митців світового рівня.
-
-
+    .other-projects
+      a.project.signs(href="/projects/signs.html")
+        .info
+          h3 Вивіски
+      a.project.post-cards(href="/projects/post-cards.html")
+        .info
+          h3 Теплі Поштівки
+      a.project.residences(href="/projects/residences.html")
+        .info
+          h3 Виїзні резиденції
+      a.project.other
+        .info
+          h3 Інші проекти
+        
   section.mission
     img.paralax(src="/assets/photo2.jpg")
     .container
@@ -122,22 +135,25 @@ block content
         | Незавершені
   section.news
     h2 новини
-      span 18
+      span 3
     .news-item
       img(src="/assets/news/news1.jpg")
-      h4 В Украине появилос пианино, раздающее минеральную воду за музыку
-      p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-      time 12.12.14
+      h4 
+        a(href="/news/071114.html") В «Urban Space 100» триває набір персоналу. Вже відомо, хто став керівником закладу
+      p 23 — саме стільки вакансій відкрито в «Urban Space 100»
+      time 07.11.14
     .news-item
       img(src="/assets/news/news1.jpg")
-      h4 Команда відкриває обличчя
-      p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum Duis sed odio sit amet
-      time 12.12.14
+      h4 
+        a(href="/news/241014.html") Сувеніри з символікою міста вироблятимуть у Івано-Франківську
+      p В Івано-Франківську відкривається сувенірна фабрика «Буквиця»
+      time 24.10.14
     .news-item.last
       img(src="/assets/news/news1.jpg")
-      h4 В Украине появилос пианино, раздающее минеральную
-      p This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-      time 12.12.14
+      h4 
+        a(href="/news/221014.html") На Набережній обладнають велодоріжку
+      p Активісти спільноти “Тепле веломісто” активно лобіюють облаштування першої велодоріжки в Івано-Франківську на вулиці Набережній.
+      time 22.10.14
     .button-container
       a.button.red(href="news.html") всі новини
   include partials/overlays

@@ -2,14 +2,17 @@ doctype html
 html(lang="en")
   head
     meta(charset="utf-8")
-    title Template
+    - var title = 'Template';
+    block vars
+    title
+      =title      
     link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800&subset=latin,cyrillic-ext")
     // build:css /assets/app.css
     link(rel="stylesheet", href="/assets/tooltipster.css")
     link(rel="stylesheet", href="/assets/app.css")
     // endbuild
-
   - var bodyClass = '';
+  
   block vars
   body(class='#{bodyClass}')
     header
@@ -23,6 +26,8 @@ html(lang="en")
             a(href="/#info") про нас
           li
             a(href="/partners.html") партнери
+          li
+            a(href="/news.html") новини
           li
             a(href="/publications.html") публікації
           li
