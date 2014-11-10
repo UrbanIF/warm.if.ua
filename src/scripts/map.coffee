@@ -4,7 +4,7 @@ module.exports = (x)->
   groups = [
     {
       title: 'Магазини',
-      color: '#ff2f13',
+      color: '#e5006f',
       markers: [{
         icon: 'assets/markers/icon1.png',
         title: 'Говорить Івано-Франківськ',
@@ -129,7 +129,7 @@ module.exports = (x)->
     },
     {
       title: 'Офіс "Тепле місто"',
-      color: '#aaaf13',
+      color: '#d0712e',
       markers: [{
         icon: 'assets/markers/office.png',
         title: 'marker1',
@@ -142,7 +142,7 @@ module.exports = (x)->
     },
     {
       title: 'UrbanSpace 100',
-      color: '#002f13',
+      color: '#ff2724',
       markers: [{
         icon: 'assets/markers/urban.png',
         title: 'UrbanSpace 100',
