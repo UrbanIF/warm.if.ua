@@ -384,6 +384,7 @@ section.projects {
     .child-space { background-image: url('/assets/projects/child-space.jpg'); }
     .art { background-image: url('/assets/projects/art.jpg'); }
     .other { background-image: url('/assets/projects/other.jpg'); }
+
     .signs { background-image: url('/assets/projects/signs.jpg'); }
     .grunvaldska { background-image: url('/assets/projects/grunvaldska.jpg'); }
   }
@@ -396,6 +397,7 @@ section.projects {
     .post-cards { background-image: url('/assets/projects/post-cards-small.jpg'); }
     .other { background-image: url('/assets/projects/other-projects.jpg'); }
     .signs { background-image: url('/assets/projects/signs.jpg'); }
+    .residences { background-image: url('/assets/projects/residences.jpg'); }
     .project {
       text-decoration: none;
       width: em(237);
@@ -1373,30 +1375,29 @@ body.project {
 .user-text {
   font-family: OpenSans;
   color: #4a4a4a;
-  font-size: em(14);
   line-height: 1.43;
   font-weight: 400;
 
 
   h3, h5 {
     color: #242424;
-    font-size: em(24,14);
+    font-size: em(24);
     line-height: 1.25;
     font-weight: 700;
     margin: em(47, 24) 0 em(32,24);
   }
 
   p {
-    margin: em(26,14) 0;
+    margin: em(26,16) 0;
   }
 
   .add-space {
     display: block;
-    margin-bottom: em(50, 14);
+    margin-bottom: em(50);
   }
   .add-top-space {
     display: block;
-    margin-top: em(50, 14);
+    margin-top: em(50);
   }
 
   a {
@@ -1410,7 +1411,7 @@ body.project {
 
   ul, ol {
     padding: 0 0 0 2.5em;
-    margin: em(26,14) 0;
+    margin: em(26,16) 0;
   }
   ol {
     list-style-type: decimal;
@@ -1453,7 +1454,7 @@ body.project {
 
   .assets {
     max-width: em(788);
-    margin: em(58,14) auto;
+    margin: em(58) auto;
     p {
       margin: 1em 0;
     }
