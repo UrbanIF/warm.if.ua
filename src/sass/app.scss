@@ -179,6 +179,7 @@ header{
 .rating-link {
   color: #fff;
   text-decoration: underline;
+  display: inline;
   cursor: pointer;
   &:hover {
     text-decoration: none;
