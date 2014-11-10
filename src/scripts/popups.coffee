@@ -144,4 +144,3 @@ module.exports = (x)->
         i.src = ob.data('hover')
   )()
 
-  $("section a[href^='http://']").attr("target","_blank")
