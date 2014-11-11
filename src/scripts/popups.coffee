@@ -72,8 +72,8 @@ module.exports = (x)->
   # $currentStep = $previous
 
 
-  showSuccessStep = (e)->
-    e.preventDefault()
+  showSuccessStep = ()->
+    # e.preventDefault()
     transitToStep($successStep)
     previousSteps = []
     checkBackButton()
@@ -117,7 +117,14 @@ module.exports = (x)->
   # $('.step1 .as-company').on 'click', showCompanyStep
   # $('.step2c .become-business-partner').on 'click', showBusinessFormStep
   # $('.step2 .become-member').on 'click', showPeopleFormStep
-  # $('form.business').on 'submit', showSuccessStep
+  $('form.business, form.people').on 'submit', (e)->
+    e.preventDefault()
+    form = $(e.currentTarget)
+    data = form.serialize()
+    action = form.prop('action')
+    xhr = $.post( action, data )
+    xhr.always ->
+      showSuccessStep()
   # $('form.people').on 'submit', showSuccessStep
   # $('.give-money').on 'click', showMoneyStep
 
