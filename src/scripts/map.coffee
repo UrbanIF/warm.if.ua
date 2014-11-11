@@ -218,6 +218,9 @@ module.exports = (x)->
       mapTypeId: google.maps.MapTypeId.ROADMAP
       disableDefaultUI: true
       zoomControl: true
+      zoomControlOptions:
+        position: google.maps.ControlPosition.LEFT_CENTER
+        # style: google.maps.ZoomControlStyle.SMALL
     map = new google.maps.Map(mapCanvas, mapOptions)
     buildList(groups)
     placeMarkers(groups, map)
