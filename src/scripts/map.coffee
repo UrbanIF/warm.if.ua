@@ -154,25 +154,32 @@ module.exports = (x)->
       }]
     }
   ]
+  activeWindow = null
   placeMarkers = (markerGroups, map)->
+    markers = []
     # geocoder = new google.maps.Geocoder()
     for group in markerGroups
       group.markerObjs = []
       for marker in group.markers
-        content = "<div>#{marker.title}, #{marker.address}</div>"
-        infowindow = new google.maps.InfoWindow
-          content: content
-
-        marker = new google.maps.Marker(
+        gMarker = new google.maps.Marker(
           map: map
           position: marker.coords
           icon: marker.icon
           title: marker.title
         )
-        # google.maps.event.addListener marker, 'click', ->
-        #   infowindow.open map, marker
+        content = "<div style='height:70px'><h3>#{marker.title}</h3> #{marker.address}</div>"
+        bindInfoWindow(gMarker, map, content)
+        group.markerObjs.push(gMarker)
 
-        group.markerObjs.push(marker)
+  bindInfoWindow = (marker, map, content) ->
+    infowindow = new google.maps.InfoWindow
+      content: content
+    google.maps.event.addListener marker, 'click', ->
+      console.log activeWindow
+      activeWindow.close() if activeWindow?
+      infowindow.open map, marker
+      activeWindow = infowindow
+      map.panTo marker.position
 
   showAllMarkers = (markerGroups, show=true )->
     for group in markerGroups
