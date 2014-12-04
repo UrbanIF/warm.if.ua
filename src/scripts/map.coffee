@@ -161,13 +161,14 @@ module.exports = (x)->
     for group in markerGroups
       group.markerObjs = []
       for marker in group.markers
-        gMarker = new google.maps.Marker(
+        gMarker = new google.maps.Marker
           map: map
           position: marker.coords
           icon: marker.icon
           title: marker.title
-        )
-        content = "<div style='height:70px'><h3>#{marker.title}</h3> #{marker.address}</div>"
+        content = "<div style='height:70px'>"
+        content += "<h3>#{marker.title}</h3>"
+        content += "#{marker.address}</div>"
         bindInfoWindow(gMarker, map, content)
         group.markerObjs.push(gMarker)
 

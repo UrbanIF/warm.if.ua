@@ -1,0 +1,33 @@
+extends ../layout/default
+block vars
+  - var bodyClass = 'news'
+  - var title = ' Ресторація «Кухня»'
+  
+block content
+  section.news-item
+    .date
+      time
+        | 04
+        span груд
+    article
+      h5 Ресторація «Кухня»
+      
+      p Відразу після презентації проекту «Вивіски» в квітні цього року ми отримали кілька замовлень на розробку макетів вивісок для різних бізнесів. Ми хочемо поділитися нашими роботами і досягненнями.
+      p «Ресторація „Кухня“» — спільна робота Теплого Міста та власників закладу. До ребрендингу фасад закладу був дуже непривабливим: велика пластикова вивіска, зайва реклама, оббитий керамічною плиткою цоколь, страшне металеве огородження, неправильний водовідвід. Нам вдалося не тільки вирішити ці проблеми, але й попрацювати над благоустроєм вулиці, додавши озеленення та велопарковки. З наступного року плануємо розробити паспорт фасаду усього будинку.
+      
+      figure
+        img(src="/assets/news/news61.jpg", alt="news-item")
+        p До
+        img(src="/assets/news/news62.jpg", alt="news-item")
+        p Розроблений проек
+        img(src="/assets/news/news63.jpg", alt="news-item")
+        p Перший етап втілення проекту
+        img(src="/assets/news/news64.jpg", alt="news-item")
+        p Перший етап втілення проекту
+      p.right
+        span.st_facebook_large(displayText='Facebook')
+          span.st_twitter_large(displayText='Tweet')
+            span.st_vkontakte_large(displayText='Vkontakte')
+              span.st_googleplus_large(displayText='Google +')
+                      
+                            
