@@ -16,10 +16,14 @@ html(lang="en")
     link(rel="stylesheet", href="/assets/tooltipster.css")
     link(rel="stylesheet", href="/assets/app.css")
     // endbuild
-    meta(property="og:image" content=og_image)
-    meta(property="og:title" content=og_title)
-    meta(property="og:url" content=og_url)
-    meta(property="og:description" content=og_description)
+    if og_image
+      meta(property="og:image" content=og_image)
+    if og_title    
+      meta(property="og:title" content=og_title)
+    if og_url
+      meta(property="og:url" content=og_url)
+    if og_description
+      meta(property="og:description" content=og_description)
   - var bodyClass = '';
   
   block vars
@@ -74,7 +78,8 @@ html(lang="en")
     script.
       var switchTo5x=true;
     script(src="http://w.sharethis.com/button/buttons.js")
-
+    script.
+      stLight.options({publisher: "75111b81-2647-4c71-9361-92cfc4839401", doNotHash: false, doNotCopy: false, hashAddressBar: false});
     // build:js /assets/app.js
     script(src="/assets/jquery.tooltipster.min.js")
     script(src="/assets/app.js")
