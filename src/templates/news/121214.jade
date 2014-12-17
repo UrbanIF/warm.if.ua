@@ -1,0 +1,25 @@
+extends ../layout/default
+block vars
+  - var bodyClass = 'news'
+  - var title = '«Тепле Місто» на радіо!'
+  
+block content
+  section.news-item
+    .date
+      time
+        | 12
+        span груд
+    article
+      h5 «Тепле Місто» на радіо!
+      p Про проекти "Теплого Міста" можна почути в ефірі на хвилях радіостанції "Вежа" 107 FM. Ми будемо розповідати про реалізовані проекти і плани на майбутнє у циклі передач "Ініціатива", які виходитимуть кожні 2 тижні.
+      
+      p Роман Малиновський, керівник проекту "Теплий арт", дав цікаве насичене інтерв'ю про Арт-резиденцію в Івано-Франківську.
+      p Що таке Арт-резиденція, яка її мета, як буде реалізовуватися проект, які очікування від резиденції? Про це і більше можна дізнатися тут
+      p 
+        iframe(frameborder="no", height="450", scrolling="no", src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/63736107&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", width="100%")
+    p.right
+      span.st_facebook_large(displayText='Facebook')
+      span.st_twitter_large(displayText='Tweet')
+      span.st_vkontakte_large(displayText='Vkontakte')
+      span.st_googleplus_large(displayText='Google +')
+                          

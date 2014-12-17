@@ -36,6 +36,7 @@ $ ->
 
   # external links in new window
   $("a[href^='http://'], a[href^='https://']").attr("target","_blank")
+  
   stLight.options
     publisher: "75111b81-2647-4c71-9361-92cfc4839401"
     doNotHash: true

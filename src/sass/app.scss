@@ -1289,12 +1289,19 @@ section.news-item {
     font-weight: 700;
     margin: 0 0 em(28,18);
   }
-  p {
+  h6 {
+    color: #242424;
+    font-size: em(18);
+    font-weight: 700;
+    text-align: center;
+  }
+  p, ul li, ol li {
     color: #7c7c7c;
     font-size: em(14);
     font-weight: 400;
     line-height: em(20, 14);
   }
+
 }
 section.faq {
   @include outer-container;

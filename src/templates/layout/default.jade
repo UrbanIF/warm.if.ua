@@ -2,7 +2,11 @@ doctype html
 html(lang="en")
   head
     meta(charset="utf-8")
-    - var title = 'Template'
+    - var title = 'Тепле Місто'
+    - var og_image = ''
+    - var og_title = ''
+    - var og_description = ''
+    - var og_url = ''
     block vars
     title
       =title
@@ -12,6 +16,10 @@ html(lang="en")
     link(rel="stylesheet", href="/assets/tooltipster.css")
     link(rel="stylesheet", href="/assets/app.css")
     // endbuild
+    meta(property="og:image" content=og_image)
+    meta(property="og:title" content=og_title)
+    meta(property="og:url" content=og_url)
+    meta(property="og:description" content=og_description)
   - var bodyClass = '';
   
   block vars
@@ -63,6 +71,8 @@ html(lang="en")
     script(src="http://maps.googleapis.com/maps/api/js")
     script(src="http://code.jquery.com/jquery-git1.min.js")
     script(src="http://f.vimeocdn.com/js/froogaloop2.min.js")
+    script.
+      var switchTo5x=true;
     script(src="http://w.sharethis.com/button/buttons.js")
 
     // build:js /assets/app.js

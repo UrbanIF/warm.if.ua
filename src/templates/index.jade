@@ -1,6 +1,10 @@
 extends layout/default
 block vars
   - var title = 'Тепле Місто'
+  - var og_image = 'http://warm.if.ua/assets/photo.jpg'
+  - var og_title = 'Тепле Місто'
+  - var og_description = 'Середовище «Тепле Місто» Об’єднує людей і бізнеси, які підтримують ідеї та дії щодо сталого розвитку Івано-Франківська'
+  - var og_url = 'http://warm.if.ua/'
 block content
   include partials/header-grid
 
@@ -135,25 +139,26 @@ block content
         | Незавершені
   section.news
     h2 новини
-      span 6
+      span 9
     .news-item
+      img(src="/assets/news/1712/preview.jpg")
+      h4 
+        a(href="/news/171214.html") Аналіз вивісок на вулиці Січових стрільців
+      p Тепле Місто вирішило дослідити ситуацію із вивісками в Івано-Франківську
+      time 17.12.14      
+    .news-item
+      img(src="/assets/news/0812/photo_small.jpg")
+      h4 
+        a(href="/news/081214.html") Перший грант і перша нагорода
+      p "Тепле Місто" отримало грант на участь у Форумі з організаційного розвитку – масштабній події для громадських організацій, яка проходить щороку у Києві.
+      time 08.12.14      
+    .news-item.last
       img(src="/assets/news/kitchen.jpg")
       h4 
         a(href="/news/041214.html") Ресторація «Кухня»
       p Відразу після презентації проекту «Вивіски» в квітні цього року ми отримали кілька замовлень на розробку макетів вивісок для різних бізнесів. Ми хочемо поділитися нашими роботами і досягненнями.
       time 04.12.14
-    .news-item
-      img(src="/assets/news/logo-310.png")
-      h4 
-        a(href="/news/251114.html") Середовище «Тепле Місто» разом з партнерами презентували конкурс «Місто дружнє до дітей»
-      p перший в Івано-Франківську міжнародний архітектурний конкурс
-      time 25.11.14
-    .news-item.last
-      img(src="/assets/news/11.jpg")
-      h4 
-        a(href="/news/181114.html") 18 листопада Тепле Місто презентувало Арт-резиденцію у Івано-Франківську
-      p «Тепле Місто» представляє проект Арт-резиденції у Івано-Франківську
-      time 18.11.14
+
     .button-container
       a.button.red(href="news.html") всі новини
   include partials/overlays
