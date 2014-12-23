@@ -231,18 +231,25 @@ header{
       font-size: em(18);
       line-height: 1.2;
       font-weight: 700;
-      margin: em(110) 0 em(46);
+      margin: em(65, 18) 0 em(40, 18);
     }
     .rating-overlay__second {
       font-size: em(18);
       line-height: 1.2;
       font-weight: 400;
-      margin-bottom: em(46);
+      margin-bottom: em(40, 18);
     }
     .rating-overlay__third {
       font-size: em(14);
       line-height: 1.4;
       font-weight: 400;
+      margin-bottom: em(40, 18);
+    }
+    .rating-overlay__link {
+      font-size: em(18);
+      line-height: 1.2;
+      font-weight: 400;
+      color: #242424;
     }
 
 
@@ -1306,20 +1313,31 @@ section.news-item {
 section.faq {
   @include outer-container;
   margin-top: em(70);
+  h3 {
+    text-transform: uppercase;
+    font-size: em(26);
+    margin-bottom: 3em;
+  }
   h4 {
     color: #242424;
     font-size: em(24);
     font-weight: 700;
-    text-transform: uppercase;
-    margin: em(24, 24) 0 ;
+    margin: em(24, 24) 0;
   }
-  p {
-    color: #7c7c7c;
-    font-size: em(14);
-    font-weight: 400;
-    line-height: em(18,14);
-    padding-bottom: em(30,14);
+  .block {
+    padding-bottom: em(24);
+    ul {
+      margin: 0;
+    }
+    p, ul li {
+      margin: 0.5em 0;
+      color: #7c7c7c;
+      font-size: em(14);
+      font-weight: 400;
+      line-height: em(21,14);
+    }
   }
+
 }
 
 // partners
